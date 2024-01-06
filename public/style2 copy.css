@@ -1,0 +1,103 @@
+body {
+    background: url(photos/ryan-wallace-azA1hLbjBBo-unsplash.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    min-height: 100vh; /* Ensure full viewport height */
+}
+
+.game-container {
+    background-color: #fff;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: 90%; /* Adjusted width for better responsiveness */
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.word-display {
+    font-size: 24px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+input[type="text"] {
+    padding: 5px;
+    font-size: 16px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.word-image {
+    width: 100%; /* Adjusted image width for responsiveness */
+    height: auto;
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px; /* Adjusted padding for better touch interaction */
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%; /* Full width for buttons */
+    margin-top: 10px;
+}
+
+#score, #time-left {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+#score-value, #time-left-value {
+    font-weight: bold;
+}
+
+#message-display {
+    font-size: 18px;
+    color: #ff0000;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* Media query for tablets */
+@media (max-width: 768px) {
+    .game-container {
+        width: 80%; /* Adjusted width for tablets */
+        max-width: 500px; /* Adjusted maximum width for tablets */
+    }
+    .word-display {
+        font-size: 20px; /* Adjusted font size for tablets */
+    }
+    button {
+        padding: 10px 15px; /* Adjusted padding for tablets */
+    }
+}
+
+/* Media query for phones */
+@media (max-width: 480px) {
+    .game-container {
+        width: 100%; /* Full width for phones */
+        max-width: none; /* Remove max-width for phones */
+    }
+    .word-display {
+        font-size: 18px; /* Adjusted font size for phones */
+    }
+    button {
+        padding: 10px 10px; /* Adjusted padding for phones */
+    }
+}

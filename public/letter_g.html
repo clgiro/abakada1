@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title> 
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+   <link rel="stylesheet" href="letter.css">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand me-auto" href="#">Abakada</a>
+           <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Abakada</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link mx-lg-2 active" aria-current="page" href="index.html">Leksyon</a>
+                        </li>
+                    
+                        <li class="nav-item">
+                           
+                            <a class="nav-link mx-lg-2" href="games.html" > <i class="fa-solid fa-gamepad fa-2x" style="color: #14033a; display: inline-flex;"><p style="font-size: medium; display: flex; padding-top: 10px; padding-left: 10px;">Mga Laro</p></i></a>                          
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link mx-lg-2" href="quiz.html">Pagsusulit</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link mx-lg-2" href="citation.html">Referensya</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link mx-lg-2" href="about.html">Tungkol</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link mx-lg-2" href="dashboard">Profile</a>
+                      </li>
+                    </ul>
+                </div>
+            </div>
+            <button href="#" class="login-button" onclick="logout()" >Log out</button>
+            <button class="navbar-toggler pe-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </nav>
+       
+    <div class="letter-container">
+         <div class="lcon">  
+         <div class="a" id="a" onclick="playAudio('A')">Ga <i class="fas fa-american-sign-language-interpreting asl-icon" onclick="showPhotoCollage(['photos2/g.jpg', 'photos2/a.jpg'])"></i>   <audio id="audioPlayerA">
+        <source src="audio/ga.mp3" type="audio/mpeg">
+       
+       </audio></div>
+  
+          <div class="e"  id="e"  onclick="playAudio('E')">Ge <i class="fas fa-american-sign-language-interpreting asl-icon" onclick="showPhotoCollage(['photos2/g.jpg', 'photos2/e.jpg'])"></i>  <audio id="audioPlayerE">
+            <source src="audio/ge.mp3" type="audio/mpeg">
+           
+           </audio></div>
+            <div class="i" id="i" onclick="playAudio('I')">Gi <i class="fas fa-american-sign-language-interpreting asl-icon" onclick="showPhotoCollage(['photos2/g.jpg', 'photos2/i.jpg'])"></i>  <audio id="audioPlayerI">
+            <source src="audio/gi.mp3" type="audio/mpeg">
+           
+           </audio></div>
+           <div class="o" id="o" onclick="playAudio('O')">Go <i class="fas fa-american-sign-language-interpreting asl-icon" onclick="showPhotoCollage(['photos2/g.jpg', 'photos2/o.jpg'])"></i>  <audio id="audioPlayerO">
+            <source src="audio/go.mp3" type="audio/mpeg">
+           
+               </audio></div>
+           <div class="u" id="u" onclick="playAudio('U')">Gu <i class="fas fa-american-sign-language-interpreting asl-icon" onclick="showPhotoCollage(['photos2/g.jpg', 'photos2/u.jpg'])"></i>  <audio id="audioPlayerU">
+            <source src="audio/gu.mp3" type="audio/mpeg">
+           
+                </audio></div>
+         </div> 
+          <div class="ls">
+          <div class="lesson-container">
+          <h5>Halimbawa ng mga salita</h5>
+          <p>Gamot ga•mót </p>
+        <p>Gulay gú•lay</p>
+        <p>Gamit gá•mit </p>
+        <p>Ginisa gi•ni•sá</p>
+
+          </div>
+          <div class="sentence-container">
+           <h5>Halimbawa ng mga pangungusap</h5>
+           <p>Gus-to ko ang gu-lay, la-lo na ang mga gu-lay mu-la sa a-ming har-din.</p>
+           <p>Gu-mi-sing ako nang ma-a-ga u-pang mag-si-mu-la sa a-king mga ga-wa-in</p>
+           <p>Gus-to na-min ng ma-gan-dang pa-na-hon u-pang mag-la-ro sa la-bas.</p>
+           <p>Gus-to kong mag-ba-sa ng mga ma-ga-gan-dang ku-wen-to ba-go ma-tu-log.</p>
+           <p>Gus-to kong gu-mu-hit at mag-ku-lay ga-mit ang a-king mga la-pis.</p>
+   
+         </div>
+         </div>
+         <iframe  src="https://www.youtube.com/embed/_R-DWf83JQc?si=LNKeXF7Ttvdhupbx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>  
+         <iframe  src="https://www.youtube.com/embed/P_KA9j57IWo?si=GBRKnv4YZ0ckTMt7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+         <div class="modal fade" id="aslModal" tabindex="-1" aria-labelledby="aslModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="aslModalLabel">ASL</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="aslModalBody">
+                  <!-- Dynamic content will be added here -->
+                </div>
+
+ </div>
+ <script src="letter.js"></script>
+ <script src="checklg.js"></script>
+   
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/33b39637ff.js" crossorigin="anonymous"></script>
+
+</body>
+</html>

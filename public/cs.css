@@ -1,0 +1,198 @@
+body {
+    background: url(photos/pexels-artem-podrez-6941083.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    
+    font-family: 'Comic Sans MS', cursive;
+    height: 100vh;
+    /* Ensure the body takes the full height of the viewport */
+}
+body::before {
+    background-color: rgba(0, 0, 0, 0.6);
+    content: "";
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+.login-button {
+    background-color: #5ebd1e;
+    color: #fff;
+    font-size: 14px;
+    padding: 8px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: 0.3s background-color;
+}
+
+
+.navbar {
+    background-color: #1eb0bd;
+    height: 70px;
+    margin: 20px;
+    border-radius: 16px;
+    padding: 0.5rem;
+    box-shadow: 2px 2px 2px;
+}
+
+.lesson-clicked {
+    color: rgb(162, 13, 212); /* Change the color as per your preference */
+    /* Add any additional styling here */
+}
+
+.navbar-brand, .offcanvas-title {
+    font-weight: 500;
+    color: #d7fbf2;
+    transition: 0.3s color;
+      /* Add your styles for the navbar brand here */
+      color: #fff; /* Change the color as needed */
+      font-size: 30px; /* Adjust the font size */
+      font-weight: bold; /* Make it bold */
+      font-family: 'Comic Sans MS', cursive; /* Add a fun font */
+    
+}
+ /* Add more styles for the logo as needed */
+ .navbar-brand span {
+    display: inline-block;
+    transition: color 0.3s ease-in-out;
+}
+
+.navbar-brand:hover span {
+    color: #33ccff; /* Change the hover color */
+}
+
+
+
+.navbar-toggler {
+    border: none;
+    font-size: 1.25rem;
+}
+
+.navbar-toggler:focus, .btn-close:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+.nav-link {
+    color: #fff;
+    font-weight: 500;
+    position: relative;
+    font-size: 20px;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: #000;
+}
+.offcanvas-body, .offcanvas-header{
+    background-color: #1eb0bd;
+    
+}
+
+.about-container, .citation-container{
+    color: #fff;
+    text-align: center;
+    padding:20px ;
+    width: 50%;
+    position: absolute;
+    margin-top: 100px;
+   
+
+
+   
+}
+
+.login-button {
+    background-color: #009970;
+    color: #fff;
+    font-size: 14px;
+    padding: 8px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: 0.3s background-color;
+}
+
+.login-button:hover {
+    background-color: #00b383;
+}
+.navbar {
+    background-color: #1eb0bd;
+    height: 70px;
+    margin: 20px;
+    border-radius: 16px;
+    padding: 0.5rem;
+    box-shadow: 2px 2px 2px;
+}
+
+.lesson-clicked {
+    color: rgb(162, 13, 212); /* Change the color as per your preference */
+    /* Add any additional styling here */
+}
+
+.navbar-brand, .offcanvas-title {
+    font-weight: 500;
+    color: #d7fbf2;
+    transition: 0.3s color;
+      /* Add your styles for the navbar brand here */
+      color: #fff; /* Change the color as needed */
+      font-size: 30px; /* Adjust the font size */
+      font-weight: bold; /* Make it bold */
+      font-family: 'Comic Sans MS', cursive; /* Add a fun font */
+    
+}
+ /* Add more styles for the logo as needed */
+ .navbar-brand span {
+    display: inline-block;
+    transition: color 0.3s ease-in-out;
+}
+
+.navbar-brand:hover span {
+    color: #33ccff; /* Change the hover color */
+}
+
+
+
+.navbar-toggler {
+    border: none;
+    font-size: 1.25rem;
+}
+
+.navbar-toggler:focus, .btn-close:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+.nav-link {
+    color: #fff;
+    font-weight: 500;
+    position: relative;
+    font-size: 20px;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: #000;
+}
+.offcanvas-body, .offcanvas-header{
+    background-color: #1eb0bd;
+    
+}
+
+@media screen and (max-width: 768px) {
+   
+    
+   
+.about-container, .citation-container{
+   
+
+        width: 100%;
+    }
+   
+}
+   

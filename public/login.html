@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="ls.css">
+    <title>Document</title>
+  
+<body>
+    <div class="container" >
+        <!-- Buttons to Choose between Sign Up and Login -->
+        <h1>Abakada</h1>
+        <div class="button-container">
+            <button onclick="showSignUpForm()">Mag sign Up</button>
+            <button onclick="showLoginForm()">Mag login</button>
+        </div>
+
+        <!-- Sign-up Form -->
+        <div class="form-container" id="signup-form" style="display: none;">
+            <h2>Sign Up</h2>
+            <form onsubmit="submitForm(event)">
+                <!-- Your sign-up form fields go here -->
+
+                <label for="username">Pangalan:</label>
+                <input type="text" id="username" name="username" required>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required  placeholder="10 characters o higit pa">
+
+                <label for="confirm-password">Kompirmahin ang password:</label>
+                <input type="password" id="confirm-password" name="confirm-password" required  placeholder="10 characters o higit pa">
+
+                <!-- Error message for password criteria -->
+                <div class="error-message" id="password-error"></div>
+
+                <button type="submit">Mag sign Up</button>
+            </form>
+        </div>
+
+        <!-- Login Form -->
+        <div class="form-container" id="login-form" style="display: inline;">
+            <h2>Login</h2>
+            <form onsubmit="submitLoginForm(event)">
+                <!-- Your login form fields go here -->
+                <label for="username">Pangalan:</label>
+                <input type="text" id="usernamelog" name="username" required>
+
+                <label for="password">Password:</label>
+                <input type="password" id="passwordlog" name="password" required placeholder="10 characters o higit pa">
+
+                <button type="submit">Mag login</button>
+            </form>
+        </div>
+        <div id="error-message" class="message-container"></div>
+        <div id="success-message"></div>
+
+    </div>
+    <script src="ls.js" defer></script>
+</body>
+</html>

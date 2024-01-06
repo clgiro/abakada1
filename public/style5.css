@@ -1,0 +1,196 @@
+body{
+    background: url(photos/pexels-artem-podrez-6941083.jpg);
+    background-size: cover;
+    background-position:center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+   justify-content: center;
+    margin: 0;
+    padding: 0;
+    font-family: 'Comic Sans MS', cursive;
+    
+}
+body::before {
+    background-color: rgba(0, 0, 0, 0.6);
+    content: "";
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.login-button {
+    background-color: #5ebd1e;
+    color: #fff;
+    font-size: 14px;
+    padding: 8px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: 0.3s background-color;
+}
+
+.navbar {
+    background-color: #1eb0bd;
+    height: 70px;
+    margin: 20px;
+    border-radius: 16px;
+    padding: 0.5rem;
+    box-shadow: 2px 2px 2px;
+}
+
+.navbar-brand, .offcanvas-title {
+    font-weight: 500;
+    color: #d7fbf2;
+    transition: 0.3s color;
+      /* Add your styles for the navbar brand here */
+      color: #fff; /* Change the color as needed */
+      font-size: 30px; /* Adjust the font size */
+      font-weight: bold; /* Make it bold */
+      font-family: 'Comic Sans MS', cursive; /* Add a fun font */
+    
+}
+ /* Add more styles for the logo as needed */
+ .navbar-brand span {
+    display: inline-block;
+    transition: color 0.3s ease-in-out;
+}
+
+.navbar-brand:hover span {
+    color: #33ccff; /* Change the hover color */
+}
+
+
+
+.navbar-toggler {
+    border: none;
+    font-size: 1.25rem;
+}
+
+.navbar-toggler:focus, .btn-close:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+.nav-link {
+    color: #fff;
+    font-weight: 500;
+    position: relative;
+    font-size: 20px;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: #000;
+}
+.offcanvas-body, .offcanvas-header{
+    background-color: #1eb0bd;
+    
+}
+
+.maincontainer{
+
+    display: flex;
+    justify-content:center;
+    align-items: center; 
+    flex-wrap: wrap;
+    position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  height: fit-content;
+  width: fit-content;
+ 
+   
+  
+  
+   
+}
+
+.box1, .box2, .box3, .box4, .box5{
+ 
+    width: 100px;
+    height:100px;
+    background-color: #fff;
+    margin: 10px;
+    border-radius: 5px 6px;
+    margin: 10px;
+    box-shadow: 3px 3px 4px 0px #000;
+    padding: 10px;
+    font-size: 70px;
+    transition: 1s;;
+
+}
+.box{
+    color: #fff;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+     margin-right: 50px;
+
+}
+.box1{
+    background-image: url(photos/logo.png);
+    background-size: cover;
+    background-position:center;
+    background-repeat: no-repeat;
+}
+.box2{
+    background-image: url(photos/logo2.png);
+    background-size: cover;
+    background-position:center;
+    background-repeat: no-repeat;
+}
+
+.box3{
+    background-image: url(photos/logo3.png);
+    background-size: cover;
+    background-position:center;
+    background-repeat: no-repeat;
+}
+.box4{
+    background-image: url(photos/logo4.png);
+    background-size: cover;
+    background-position:center;
+    background-repeat: no-repeat;
+}
+
+.box5{
+    background-image: url(photos/sentence.png);
+    background-size: cover;
+    background-position:center;
+    background-repeat: no-repeat;
+}
+
+.box1:hover, .box2:hover, .box3:hover, .box4:hover, .box5:hover{
+transform:scale(1.1);
+    z-index:2;
+    }
+    .hidden-link{
+        text-decoration: none;
+        color: transparent;
+    }
+
+    @media screen and (max-width: 768px) {
+        .box{
+            margin-right: 40px;
+            font-size: small;
+        }
+       
+    }
+    @media screen and (max-width: 480px) {
+        
+        .box{
+            margin-right: 20px;
+            font-size: smaller;
+        }
+        .box1, .box2, .box3, .box4, .box5{
+            height:80px ;
+            width:80px ;
+        }
+    }
+    
+    

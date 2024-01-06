@@ -1,0 +1,274 @@
+body {
+    background: url(photos/pexels-artem-podrez-6941083.jpg);
+    background-size: cover;
+    background-position:center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    font-family: 'Comic Sans MS', cursive;
+   flex-direction: column; /* Center content vertically and horizontally */
+}
+body::before {
+    background-color: rgba(0, 0, 0, 0.6);
+    content: "";
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+.navbar {
+    background-color: #1eb0bd;
+    height: 70px;
+    margin: 20px;
+    border-radius: 16px;
+    padding: 0.5rem;
+    box-shadow: 2px 2px 2px;
+}
+
+.navbar-brand, .offcanvas-title {
+    font-weight: 500;
+    color: #d7fbf2;
+    transition: 0.3s color;
+      /* Add your styles for the navbar brand here */
+      color: #fff; /* Change the color as needed */
+      font-size: 30px; /* Adjust the font size */
+      font-weight: bold; /* Make it bold */
+      font-family: 'Comic Sans MS', cursive; /* Add a fun font */
+    
+}
+ /* Add more styles for the logo as needed */
+ .navbar-brand span {
+    display: inline-block;
+    transition: color 0.3s ease-in-out;
+}
+
+.navbar-brand:hover span {
+    color: #33ccff; /* Change the hover color */
+}
+
+.login-button {
+    background-color: #5ebd1e;
+    color: #fff;
+    font-size: 14px;
+    padding: 8px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: 0.3s background-color;
+}
+
+
+.login-button:hover {
+    background-color: #c82c9f;
+}
+
+.navbar-toggler {
+    border: none;
+    font-size: 1.25rem;
+}
+
+.navbar-toggler:focus, .btn-close:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+.nav-link {
+    color: #fff;
+    font-weight: 500;
+    position: relative;
+    font-size: 20px;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: #000;
+}
+.offcanvas-body, .offcanvas-header{
+    background-color: #1eb0bd;
+    
+}
+
+.letter-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    top: 10px; /* Specify units (e.g., px) for top */
+    margin: 15px;
+    margin-top: 50px;
+   padding: 20px;
+   padding-top: 5%;
+
+}
+
+.a, .e, .i, .o, .u {
+    height: fit-content;
+    width: fit-content;
+    border-radius: 5px 6px;
+    margin: 10px;
+    box-shadow: 2px 2px 2px 0px #000;;
+    padding: 10px;
+    font-size: 60px;
+    flex-wrap: wrap;
+    transition: 1s;
+    color: #fff;
+    cursor: pointer;
+    
+}
+
+
+
+.a {
+    background-color:  #1eb0bd;
+    
+}
+.e {
+    background-color: #5ebd1e;
+}
+.i {
+    background-color: #7bbd1e;
+}
+.o {
+    background-color: #1eb0bd;
+}
+.u {
+    background-color: #5ebd1e;
+}
+
+.e:hover, .o:hover, .a:hover, .i:hover, .u:hover{
+    transform:scale(1.1);
+    z-index:2;
+} 
+.lcon{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+iframe{
+    width: 70%;
+    max-width: 500px;
+    height: 400px;
+   margin: 2%;
+   border-radius: 5px 6px;
+}
+
+.ls {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 25px;
+}
+
+.lesson-container, .sentence-container {
+    width: 45%; /* Adjust the width as needed */
+    padding: 20px;
+    margin: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-size: 30px;
+    text-align: center;
+    height: 50vh;
+     overflow-y: auto;
+    
+    
+}
+
+.letter-container {
+    position: relative;
+}
+
+.letter-container .lcon .asl-icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 14px; /* Adjust the size as needed */
+    margin: 5px; /* Adjust the margin as needed */
+    cursor: pointer; /* Add cursor pointer to indicate it's clickable */
+}
+
+/* Additional styling for the photo collage popup */
+.modal-body img {
+    width: 48%; /* Adjust the width as needed */
+    margin-right: 2%; /* Adjust the spacing between images as needed */
+  }
+
+  .modal-body img:last-child {
+    margin-right: 0;
+  }
+h5{
+    font-size: 30px;
+}
+.lesson-container{
+    background-color:  #5ebd1e;
+}
+.sentence-container{
+    background-color: #7bbd1e;
+
+}
+.lesson-container h5, .sentence-container h5 {
+    color: #fff; /* Set heading color */
+}
+
+.lesson-container p, .sentence-container p {
+    margin: 10px 0;
+    color: #fff; /* Set paragraph text color */
+}
+
+
+@media (max-width: 768px) {
+    .a, .e, .i, .o, .u {
+        font-size: 30px;
+        margin: 8px;
+    }
+    .ls {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .lesson-container, .sentence-container {
+        width: 100%;
+    }
+    iframe{
+        width: 470px;;
+        height: 350px;
+    }
+    .nav-link::before{
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 2px;
+        background-color: #009970;
+        visibility: hidden;
+        transition: 0.3s ease-in-out;
+    }
+
+    .nav-link:hover::before, .nav-link.active::before {
+        width: 100%;
+        visibility: visible;
+    }
+    
+   .letter-container{
+        margin-top: 100px;
+    } 
+}
+
+@media (max-width: 480px) {
+    .a, .e, .i, .o, .u {
+        font-size: 20px;
+        margin: 5px;
+    }
+  
+
+iframe{
+    width: 300px;;
+    height: 300px;
+}
+}

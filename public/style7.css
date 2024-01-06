@@ -1,0 +1,302 @@
+body {
+    background: url(photos/pexels-artem-podrez-6941083.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Comic Sans MS', cursive;
+    min-height: 100vh;
+}
+body::before {
+    background-color: rgba(0, 0, 0, 0.6);
+    content: "";
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.login-button {
+    background-color: #5ebd1e;
+    color: #fff;
+    font-size: 14px;
+    padding: 8px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: 0.3s background-color;
+}
+
+
+.navbar {
+    background-color: #1eb0bd;
+    height: 70px;
+    margin: 20px;
+    border-radius: 16px;
+    padding: 0.5rem;
+    box-shadow: 2px 2px 2px;
+}
+
+.navbar-brand, .offcanvas-title {
+    font-weight: 500;
+    color: #d7fbf2;
+    transition: 0.3s color;
+      /* Add your styles for the navbar brand here */
+      color: #fff; /* Change the color as needed */
+      font-size: 30px; /* Adjust the font size */
+      font-weight: bold; /* Make it bold */
+      font-family: 'Comic Sans MS', cursive; /* Add a fun font */
+    
+}
+ /* Add more styles for the logo as needed */
+ .navbar-brand span {
+    display: inline-block;
+    transition: color 0.3s ease-in-out;
+}
+
+.navbar-brand:hover span {
+    color: #33ccff; /* Change the hover color */
+}
+
+
+
+.navbar-toggler {
+    border: none;
+    font-size: 1.25rem;
+}
+
+.navbar-toggler:focus, .btn-close:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+.nav-link {
+    color: #fff;
+    font-weight: 500;
+    position: relative;
+    font-size: 20px;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: #000;
+}
+.offcanvas-body, .offcanvas-header{
+    background-color: #1eb0bd;
+    
+}
+
+/* Styles for the game container */
+.game-container, #remarks-maincontainer {
+    background-color: #1eb0bd;
+    border: 1px solid rgba(122, 169, 156, 0.25);
+    padding: 20px;
+    width: 600px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    margin: 20px; /* Adjusted margin for better spacing */
+}
+#container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+    margin: 110px;
+}
+
+
+/* Styling for the riddle and choices */
+.riddle {
+    font-size: 30px;
+    color: #fff;
+}
+
+.choices {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* Styling for the choice buttons */
+.choices button {
+    background-color: #3498db;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+.choices button:hover {
+    background-color: #2980b9;
+}
+
+/* Styling for the message */
+.message {
+    font-size: 24px;
+    color: #fff;
+    margin-top: 10px;
+}
+/* Leaderboard container style */
+.leaderboard-container {
+    background-color: #fff;
+    border: 1px solid rgba(122, 169, 156, 0.25);
+    padding: 20px;
+    width: 80%;
+    max-width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin: 20px; /* Adjusted margin for better spacing */
+}
+
+#leaderboard-table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+#leaderboard-table th, #leaderboard-table td {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    padding: 10px;
+}
+
+#leaderboard-table th {
+    background-color:   #1eb0bd;
+    color: #fff;
+}
+
+#leaderboard-table td {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+#leaderboard-table tbody tr:nth-child(even) td {
+    background-color: rgba(238, 238, 238, 0.9);
+}
+
+
+#new-game-button, #stop-game-button{
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+
+  .welcome-screen {
+    background-color: #1eb0bd;
+    border: 1px solid rgba(122, 169, 156, 0.25);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: 500px;
+    margin: 20px auto; /* Center horizontally and provide some margin */
+    padding: 20px;
+    text-align: center;
+    border-radius: 5px 6px;
+    color: #fff;
+}
+
+.welcome-screen h2 {
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+.welcome-screen p {
+    font-size: 16px;
+}
+
+.welcome-screen input[type="text"] {
+    padding: 5px;
+    font-size: 16px;
+    width: 100%;
+    margin: 10px 0;
+}
+
+.welcome-screen button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+    /* Adjust styles for tablets */
+    .riddle {
+        font-size: 30px;
+    }
+    
+    .choices button {
+        font-size: 18px;
+    }
+    
+    .message {
+        font-size: 20px;
+    }
+    
+    .welcome-screen {
+        width: 100%; /* Adjusted width for smaller screens */
+    }
+    .welcome-screen h2 {
+        font-size: 20px; /* Adjusted font size for smaller screens */
+    }
+    .welcome-screen button {
+        padding: 10px 15px; /* Adjusted padding for smaller screens */
+    }
+    #leaderboard-table {
+        font-size: 14px;
+    }
+
+    #leaderboard-table th,
+    #leaderboard-table td {
+        padding: 6px 10px;
+    }
+    .game-container, .leaderboard-container {
+        width: 100%
+    }
+    #container {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+    }
+    .nav-link::before{
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 2px;
+        background-color: #009970;
+        visibility: hidden;
+        transition: 0.3s ease-in-out;
+    }
+
+    .nav-link:hover::before, .nav-link.active::before {
+        width: 100%;
+        visibility: visible;
+    }
+
+}
+@media screen and (max-width: 480px) {
+    /* Adjust styles for phones */
+    .riddle {
+        font-size: 24px;
+    }
+    
+    .choices button {
+        font-size: 16px;
+    }
+    
+    .message {
+        font-size: 18px;
+    }
+   
+}
+

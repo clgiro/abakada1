@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+   <link rel="stylesheet" href="letter.css"></head>
+<body>
+<nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand me-auto" href="#">Abakada</a>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Abakada</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link mx-lg-2 active" aria-current="page" href="index.html">Leksyon</a>
+                        </li>
+                    
+                        <li class="nav-item">
+                           
+                            <a class="nav-link mx-lg-2" href="games.html" > <i class="fa-solid fa-gamepad fa-2x" style="color: #14033a; display: inline-flex;"><p style="font-size: medium; display: flex; padding-top: 10px; padding-left: 10px;">Mga Laro</p></i></a>                          
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link mx-lg-2" href="quiz.html">Pagsusulit</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link mx-lg-2" href="citation.html">Referensya</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link mx-lg-2" href="about.html">Tungkol</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link mx-lg-2" href="dashboard">Profile</a>
+                      </li>
+                    </ul>
+                </div>
+            </div>
+            <button href="#" class="login-button" onclick="logout()" >Log out</button>
+            <button class="navbar-toggler pe-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </nav>
+       <div class="letter-container">
+     <div class="lcon">   <div class="a" id="a" onclick="playAudio('A')">Aa   <i class="fas fa-american-sign-language-interpreting asl-icon" onclick="showPhotoCollage(['photos2/a.jpg'])"></i>  <audio id="audioPlayerA">
+        <source src="audio/a.mp3" type="audio/mpeg">
+       
+    </audio></div>
+  
+        <div class="e"  id="e"  onclick="playAudio('E')">Ee  <i class="fas fa-american-sign-language-interpreting asl-icon" onclick="showPhotoCollage(['photos2/e.jpg'])"></i>  <audio id="audioPlayerE">
+            <source src="audio/e.mp3" type="audio/mpeg">
+           
+        </audio></div>
+        <div class="i" id="i" onclick="playAudio('I')">Ii  <i class="fas fa-american-sign-language-interpreting asl-icon" onclick="showPhotoCollage(['photos2/i.jpg'])"></i>  <audio id="audioPlayerI">
+            <source src="audio/i.mp3" type="audio/mpeg">
+           
+        </audio></div>
+        <div class="o" id="o" onclick="playAudio('O')">Oo  <i class="fas fa-american-sign-language-interpreting asl-icon" onclick="showPhotoCollage(['photos2/o.jpg'])"></i>  <audio id="audioPlayerO">
+            <source src="audio/o.mp3" type="audio/mpeg">
+           
+        </audio></div>
+         <div class="u" id="u" onclick="playAudio('U')">Uu  <i class="fas fa-american-sign-language-interpreting asl-icon" onclick="showPhotoCollage(['photos2/u.jpg'])"></i>  <audio id="audioPlayerU">
+            <source src="audio/u.mp3" type="audio/mpeg">
+           
+        </audio></div>
+         </div>
+         <div class="ls">
+         <div class="lesson-container">
+        <h5>Halimbawa ng mga salita</h5>
+        <p>Orasan o•ra•sán</p>
+        <p>Operasyon o•pe•ras•yón  </p>
+        <p>Orkestra or•kés•tra </p>
+        <p>Obra ó•bra </p>
+        <p>Opinyon o•pin•yón</p>
+    </div>
+    <div class="sentence-container">
+        <h5>Halimbawa ng mga pangungusap</h5>
+        <p>Tu-mu-tug-tug ang or-kes-tra</p>
+        <p>Na-ka-ka-mang-ha ang ob-ra ni O-mar</p>
+        <p>Si On-yok ay may ma-r-aming o-pin-yon tung-kol sa ob-ra ni Omar </p>
+     
+    </div>
+ </div>
+ <iframe  src="https://www.youtube.com/embed/QzWIFV5sYYc?si=JUjqfB8XYmgH-tXZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>  
+ <iframe src="https://www.youtube.com/embed/KLmY56RYCSc?si=XGVFQLX3JU3DGMfn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+ <div class="modal fade" id="aslModal" tabindex="-1" aria-labelledby="aslModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="aslModalLabel">ASL</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" id="aslModalBody">
+          <!-- Dynamic content will be added here -->
+        </div>
+
+
+</div>
+<script src="letter.js"></script>
+<script src="checklg.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/33b39637ff.js" crossorigin="anonymous"></script>
+
+</body>
+</html>

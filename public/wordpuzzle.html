@@ -1,0 +1,122 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="style2.css"> <!-- Replace with your actual CSS file path -->
+
+    <title>Word Puzzle Game</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand me-auto" href="#">Abakada</a>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Abakada</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link mx-lg-2 active" aria-current="page" href="index.html">Leksyon</a>
+                        </li>
+                    
+                        <li class="nav-item">
+                           
+                            <a class="nav-link mx-lg-2" href="games.html" > <i class="fa-solid fa-gamepad fa-2x" style="color: #14033a; display: inline-flex;"><p style="font-size: medium; display: flex; padding-top: 10px; padding-left: 10px;">Mga Laro</p></i></a>                          
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link mx-lg-2" href="quiz.html">Pagsusulit</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link mx-lg-2" href="citation.html">Referensya</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link mx-lg-2" href="about.html">Tungkol</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link mx-lg-2" href="dashboard">Profile</a>
+                      </li>
+                    </ul>
+                </div>
+            </div>
+            <button href="#" class="login-button" onclick="logout()" >Log out</button>
+            <button class="navbar-toggler pe-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </nav>    
+    <audio id="wrongAudio" src="audio/Mali.mp3"></audio>
+    <audio id="correctAudio" src="audio/Tama.mp3"></audio>
+
+    
+    <div id="container">
+
+        <audio id="backgroundMusic" loop>
+            <source src="audio/smile.mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
+    <div id="welcome-screen" class="welcome-screen">
+        <h2>Ayusin ang Salita!</h2>
+        <h1></h1>
+        <p>
+            Salitang Nais ay isang kakaibang laro na magpapakita ng mga jumbled na salita na kailangan mong aayusin.
+            Subukan ang iyong kasanayan sa pagtuklas at pag-aaral ng mga Filipino words habang binubuo ang mga salita 
+            ng tama at mabilis na oras! Makakuha ng mataas na score at itala ang iyong pangalan sa leaderboard!
+        </p>
+        
+       
+
+        <button id="start-game-button">Start Game</button>
+    </div>
+    
+    <div class="game-container">
+        <h1>Ayusin ang salita</h1>
+        <img class="word-image" id="word-image" src="" alt="Word Image">
+        <div id="word-display" class="word-display">
+            <!-- The jumbled word will be displayed here -->
+        </div>
+        <input type="text" id="word-input" placeholder="Salita..">
+<button id="hint-button" onclick="getDynamicHint()">Get Hint</button>
+
+        <button id="submit-button">Ipasa</button>     
+          <button id="stop-button">Itigil</button>
+        <button id="play-again-button">Maglaro ulit</button>
+        <button id="new-game-button">Bagong Laro</button>
+        <div id="score">
+            Puntos: <span id="score-value">0</span>
+        </div>
+        <div id="time-left">
+            Time Left: <span id="time-left-value">60s</span>
+                </div> 
+        
+        <div id="message-display">
+            <!-- Messages will be displayed here -->
+        </div>
+ 
+    </div>
+ <div class="leaderboard-container">
+        <h2>Talaan(Leaderboard)</h2>
+        <table id="leaderboard-table">
+            <thead>
+                <tr>
+                    <th>Pangalan</th>
+                    <th>Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Leaderboard data will be displayed here -->
+            </tbody>
+        </table>
+    </div>
+</div>
+    <script src="script2.js"></script> <!-- Replace with your actual JavaScript file path -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/33b39637ff.js" crossorigin="anonymous"></script>
+    <script src="checklg.js"></script>
+</body>
+</html>

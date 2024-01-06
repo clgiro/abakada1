@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha384-FnpXFGwJ4t8eW5v5/j4NraOKfy4pXJf8b6QshF90EXOvW47j1g6ix1G5a6fKO5e0" crossorigin="anonymous">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="dashboard.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand me-auto" href="#">Abakada</a>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Abakada</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link mx-lg-2 active" aria-current="page" href="index.html">Leksyon</a>
+                        </li>
+                    
+                        <li class="nav-item">
+                           
+                            <a class="nav-link mx-lg-2" href="games.html" > <i class="fa-solid fa-gamepad fa-2x" style="color: #14033a; display: inline-flex;"><p style="font-size: medium; display: flex; padding-top: 10px; padding-left: 10px;">Mga Laro</p></i></a>                          
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link mx-lg-2" href="quiz.html">Pagsusulit</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link mx-lg-2" href="citation.html">Referensya</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link mx-lg-2" href="about.html">Tungkol</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link mx-lg-2" href="dashboard">Profile</a>
+                      </li>
+                    </ul>
+                </div>
+            </div>
+            <button href="#" class="login-button" onclick="logout()" >Log out</button>
+            <button class="navbar-toggler pe-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </nav>
+    
+    <div id="container1">
+        <h1>Hi <%= user.username %></h1>
+        <li>Ayusin ang salita: <%= user.scores.wordpuzzle %></li>
+        <li>I pares: <%= user.scores.memorymatch %></li>
+        <li>Bugtong: <%= user.scores.riddle %></li>
+        <li>Pangungusap: <%= user.scores.sentence %></li>
+        <li>Hulihin ang abakada: <%= user.scores.catchtheletter %></li>
+        <li>Pagsusulit: <%= user.scores.quiz %>/40</li>
+        <!-- Other elements -->
+
+        <h2>Talaan</h2>
+        <div>
+            <canvas id="quizProgressChart" width="400" height="200"></canvas>
+        </div>
+       
+        <!-- Add more elements as needed -->
+    </div> <div id="container">
+        <div id="gameMessages">
+            <h3>Pagsusuri:</h3>
+            <ul>
+                <li id="quizMessage"></li>
+                <li id="wordPuzzleMessage"></li>
+                <li id="memorymatchMessage"></li>
+                <li id="riddleMessage"></li>
+                <li id="sentenceMessage"></li> 
+                 <li id="catchtheletterMessage"></li>
+                <!-- Add more list items for other games -->
+            </ul>
+        </div>
+        
+        <div id="overallMessage">
+            <h3>Pangkalahatang pag-susuri:</h3>
+            <p id="overallEvaluation"></p>
+        </div>
+
+   <p id="link" style="display: none;">Pag-aralan ang mga <a href="index.html">leksyon</a></p>
+    </div>
+
+    <script>
+
+     const link=document.getElementById("link")
+        // Raw scores for each activity
+        const quizScore = <%= user.scores.quiz %>;
+    const wordPuzzleScore = <%= user.scores.wordpuzzle %>;
+    const memoryMatchScore = <%= user.scores.memorymatch %>;
+    const riddleScore = <%= user.scores.riddle %>;
+    const sentenceScore = <%= user.scores.sentence %>;
+    const catchTheLetterScore = <%= user.scores.catchtheletter %>;
+
+    // Maximum possible scores for each game (replace these values with actual maximum scores)
+    const maxQuizScore = 40;
+    const maxWordPuzzleScore = 1900;
+    const maxmemoryMatchScore=2700;
+    const maxriddleScore =1650 ;
+    const maxsentenceScore =1000;
+    const maxcatchTheLetterScore = 1000;
+
+    // ... add similar variables for other games
+
+    // Calculate progress as a percentage
+    const quizProgress = (quizScore / maxQuizScore) * 100;
+    const wordPuzzleProgress = (wordPuzzleScore / maxWordPuzzleScore) * 100;
+    const memoryMatchScoreProgress =  (memoryMatchScore  / maxmemoryMatchScore ) * 100;
+    const riddleScoreProgress =  (riddleScore / maxriddleScore) * 100;
+    const sentenceScoreProgress =  (sentenceScore / maxsentenceScore) * 100;
+    const catchTheLetterScoreProgress =  ( catchTheLetterScore / maxcatchTheLetterScore) * 100;
+
+    // ... calculate similar progress for other games
+
+    // Create a bar chart using Chart.js
+    const ctx = document.getElementById('quizProgressChart').getContext('2d');
+    const myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Pagsusulit', 'Ayusin ang salita', 'I pares', 'Bugtong', 'Pangungusap', 'Hulihin ang titik'],
+            datasets: [{
+                label: 'Talaan',
+                data: [quizProgress, wordPuzzleProgress, memoryMatchScoreProgress, riddleScoreProgress, sentenceScoreProgress, catchTheLetterScoreProgress],
+                backgroundColor: ['rgba(75, 192, 192, 0.2)', 'rgba(255, 99, 132, 0.2)', 'rgba(255, 205, 86, 0.2)', 'rgba(54, 162, 235, 0.2)', 'rgba(153, 102, 255, 0.2)', 'rgba(255, 159, 64, 0.2)'],
+                borderColor: ['rgba(75, 192, 192, 1)', 'rgba(255, 99, 132, 1)', 'rgba(255, 205, 86, 1)', 'rgba(54, 162, 235, 1)', 'rgba(153, 102, 255, 1)', 'rgba(255, 159, 64, 1)'],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    max: 100
+                }
+            }
+        }
+    });
+
+    function displayGameMessage(score, maxScore, gameName, messageId) {
+        const percentage = (score / maxScore) * 100;
+        let message = '';
+
+        if (percentage >= 80) {
+            message = 'Napakagaling!';
+        } else if (percentage >= 60) {
+            message = 'Magaling!';
+        } else if (percentage >= 40) {
+            message = 'Ipagpatuloy ang pag-ensayo!';
+        } else {
+            message = 'Gagaling kapa, subukan lang ng subukan!';
+         
+        }
+
+        // Update the content of the specified HTML element
+        document.getElementById(messageId).textContent = `${gameName} Evaluation: ${message}`;
+    }
+
+    displayGameMessage(quizScore, maxQuizScore, 'Pagsusulit', 'quizMessage');
+    displayGameMessage(wordPuzzleScore, maxWordPuzzleScore, 'Ayusin ang salita', 'wordPuzzleMessage');
+    displayGameMessage(memoryMatchScore,  maxmemoryMatchScore, 'I pares', 'memorymatchMessage');
+    displayGameMessage(riddleScore, maxriddleScore, 'Bugtong', 'riddleMessage');
+    displayGameMessage(sentenceScore, maxsentenceScore, 'Pangungusap', 'sentenceMessage');
+    displayGameMessage(catchTheLetterScore, maxcatchTheLetterScore, 'Hulihin ang titik', 'catchtheletterMessage');
+    
+    
+    
+    // ... display messages for other games
+
+
+    // Overall message based on the average of all games
+    const averagePercentage = (quizProgress + wordPuzzleProgress + memoryMatchScoreProgress + riddleScoreProgress + sentenceScoreProgress + catchTheLetterScoreProgress) / 100;
+
+    let overallMessage = '';
+
+    if (averagePercentage >= 80) {
+        overallMessage = 'Mahusay, ayon sa data ikaw ay may sapat na nakaalaman sa abakada';
+    } else if (averagePercentage >= 60) {
+        overallMessage = 'Mahusay, ayon sa data ikaw ay may sapat na nakaalaman sa abakada';
+    } else if (averagePercentage >= 40) {
+        overallMessage = 'Ayon sa nakalap na data, Marami kapang dapat pag-aralan';
+        link.style.display='inline'
+    } else {
+        overallMessage = 'Ayon sa nakalap na data, Marami kapang dapat pag-aralan';
+        link.style.display='inline'
+    }
+
+    // Update the content of the overall evaluation HTML element
+    document.getElementById('overallEvaluation').textContent = overallMessage;
+    </script>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+     <script src="https://kit.fontawesome.com/33b39637ff.js" crossorigin="anonymous"></script>
+   <script src="checklg.js"></script>
+  
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    <title>Letter Game</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="style.css">
+   
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand me-auto" href="#">Abakada</a>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Abakada</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link mx-lg-2 active" aria-current="page" href="index.html">Leksyon</a>
+                        </li>
+                    
+                        <li class="nav-item">
+                           
+                            <a class="nav-link mx-lg-2" href="games.html" > <i class="fa-solid fa-gamepad fa-2x" style="color: #14033a; display: inline-flex;"><p style="font-size: medium; display: flex; padding-top: 10px; padding-left: 10px;">Mga Laro</p></i></a>                          
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link mx-lg-2" href="quiz.html">Pagsusulit</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link mx-lg-2" href="citation.html">Referensya</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link mx-lg-2" href="about.html">Tungkol</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link mx-lg-2" href="dashboard">Profile</a>
+                      </li>
+                    </ul>
+                </div>
+            </div>
+            <button href="#" class="login-button" onclick="logout()" >Log out</button>
+            <button class="navbar-toggler pe-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </nav>
+    <div id="welcome-screen" class="welcome-screen">
+    <p style="color: #fff;">i click ang hinihinging titik</p>
+    <button id="start-game-button">Simulan ang laro</button>
+</div>
+
+<audio id="wrongAudio" src="audio/Mali.mp3"></audio>
+    <audio id="backgroundMusic" loop>
+        <source src="audio/littleidea.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+   <div id="container2" style="display: flex;">
+    
+    
+<audio id="soundA" src="audio/a.mp3"></audio>
+<audio id="soundB" src="audio/ba.mp3"></audio>
+<audio id="soundK" src="audio/ka.mp3"></audio>
+<audio id="soundD" src="audio/da.mp3"></audio>
+<audio id="soundE" src="audio/e.mp3"></audio>
+<audio id="soundG" src="audio/ga.mp3"></audio>
+<audio id="soundH" src="audio/ha.mp3"></audio>
+<audio id="soundI" src="audio/i.mp3"></audio>
+<audio id="soundL" src="audio/la.mp3"></audio>
+<audio id="soundM" src="audio/ma.mp3"></audio>
+<audio id="soundN" src="audio/na.mp3"></audio>
+<audio id="soundNg" src="audio/nga.mp3"></audio>
+<audio id="soundO" src="audio/o.mp3"></audio>
+<audio id="soundP" src="audio/pa.mp3"></audio>
+<audio id="soundR" src="audio/ra.....mp3"></audio>
+<audio id="soundS" src="audio/sa.mp3"></audio>
+<audio id="soundT" src="audio/ta.mp3"></audio>
+<audio id="soundU" src="audio/u.mp3"></audio>
+<audio id="soundW" src="audio/wa.mp3"></audio>
+<audio id="soundY" src="audio/ya.mp3"></audio>
+
+<!-- Repeat for other letters -->
+
+
+  <div id="container">
+        <div id="question"></div>
+        <div id="message"></div>
+        <div id="score"></div>
+    
+    <div id="game-container">
+        <!-- Game elements go here -->
+    </div> 
+    <button id="new-game" style="display: none;">Bagong laro</button>
+   </div>
+  
+   
+   
+ <div class="leaderboard-container" id="leaderboard-container" style="display: none">
+        <h2>Talaan(Leaderboard)</h2>
+        <table id="leaderboard-table">
+            <thead>
+                <tr>
+                    <th>Pangalan</th>
+                    <th>Puntos</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Leaderboard data will be displayed here -->
+            </tbody>
+        </table>
+    </div>
+  
+   </div> 
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/33b39637ff.js" crossorigin="anonymous"></script>
+
+    <script src="checklg.js"></script>
+    <script src="checklesson.js"></script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha384-FnpXFGwJ4t8eW5v5/j4NraOKfy4pXJf8b6QshF90EXOvW47j1g6ix1G5a6fKO5e0" crossorigin="anonymous">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="style.css">
+  
+    <title>Document</title>
+   
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand me-auto" href="#">Abakada</a>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Abakada</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link mx-lg-2 active" aria-current="page" href="index.html">Leksyon</a>
+                        </li>
+                    
+                        <li class="nav-item">
+                           
+                            <a class="nav-link mx-lg-2" href="games.html" > <i class="fa-solid fa-gamepad fa-2x" style="color: #14033a; display: inline-flex;"><p style="font-size: medium; display: flex; padding-top: 10px; padding-left: 10px;">Mga Laro</p></i></a>                          
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link mx-lg-2" href="quiz.html">Pagsusulit</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link mx-lg-2" href="citation.html">Referensya</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link mx-lg-2" href="about.html">Tungkol</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link mx-lg-2" href="dashboard">Profile</a>
+                      </li>
+                    </ul>
+                </div>
+            </div>
+            <button href="#" class="login-button" onclick="logout()" >Log out</button>
+            <button class="navbar-toggler pe-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </nav>
+    
+
+  <div class="maincontainer" >
+    
+    
+
+      <div class="A" id="lesson-A" ><i class="fa-solid fa-play " onclick="playAudio('A')"> <audio id="audioPlayerA">
+        <source src="audio/A sound.mp3" type="audio/mpeg"> </audio> </i><a href="letter_a.html">Aa</a> </div>
+     <div class="B" id="lesson-B" ><i class="fa-solid fa-play " onclick="playAudio('B')"> <audio id="audioPlayerB">
+            <source src="audio/B sound.mp3" type="audio/mpeg"> </audio> </i><a href="letter_b.html">Bb</a></div>
+       <div class="K"id="lesson-K"> <i class="fa-solid fa-play"onclick="playAudio('K')">   <audio id="audioPlayerK">
+        <source src="audio/Ka sound.mp3" type="audio/mpeg"></i><a href="letter_k.html" >Kk</a></div>
+      <div class="D" id="lesson-D"  > <i class="fa-solid fa-play"onclick="playAudio('D')">   <audio id="audioPlayerD">
+        <source src="audio/Da sound.mp3" type="audio/mpeg"></i><a href="letter_d.html" >Dd</a></div>
+      <div class="E"id="lesson-E"  > <i class="fa-solid fa-play"onclick="playAudio('E')">   <audio id="audioPlayerE">
+        <source src="audio/E sound.mp3" type="audio/mpeg"></i><a href="letter_e.html" >Ee</a></div>
+      <div class="G " id="lesson-G" > <i class="fa-solid fa-play"onclick="playAudio('G')">   <audio id="audioPlayerG">
+        <source src="audio/G sound.mp3" type="audio/mpeg"></i><a href="letter_g.html" >Gg</a></div>
+      <div class="H" id="lesson-H"  > <i class="fa-solid fa-play"onclick="playAudio('H')">   <audio id="audioPlayerH">
+        <source src="audio/H sound.mp3" type="audio/mpeg"></i><a href="letter_h.html" >Hh</a></div>
+      <div class="I" id="lesson-I" > <i class="fa-solid fa-play"onclick="playAudio('I')">   <audio id="audioPlayerI">
+        <source src="audio/I sound.mp3" type="audio/mpeg"></i><a href="letter_i.html" >Ii</a></div>
+      <div class="L" id="lesson-L" > <i class="fa-solid fa-play"onclick="playAudio('L')">   <audio id="audioPlayerL">
+        <source src="audio/L sound.mp3" type="audio/mpeg"></i><a href="letter_l.html" >Ll</a></div>
+      <div class="M" id="lesson-M" > <i class="fa-solid fa-play"onclick="playAudio('M')">   <audio id="audioPlayerM">
+        <source src="audio/M sound.mp3" type="audio/mpeg"></i><a href="letter_m.html" >Mm</a></div>
+      <div class="N" id="lesson-N" > <i class="fa-solid fa-play"onclick="playAudio('N')">   <audio id="audioPlayerN">
+        <source src="audio/N sound.mp3" type="audio/mpeg"></i><a href="letter_n.html" >Nn</a></div>
+      <div class="Ng" id="lesson-Ng" > <i class="fa-solid fa-play"onclick="playAudio('Ng')">   <audio id="audioPlayerNg">
+        <source src="audio/Nga sound.mp3" type="audio/mpeg"></i><a href="letter_Ng.html" >Ngng</a></div>
+      <div class="O" id="lesson-A" > <i class="fa-solid fa-play"onclick="playAudio('O')">   <audio id="audioPlayerO">
+        <source src="audio/O sound.mp3" type="audio/mpeg"></i><a href="letter_o.html" >Oo</a></div>
+      <div class="P"id="lesson-P" > <i class="fa-solid fa-play"onclick="playAudio('P')">   <audio id="audioPlayerP">
+        <source src="audio/P sound.mp3" type="audio/mpeg"></i><a href="letter_p.html" >Pp</a></div>
+     <div class="R" id="lesson-R" > <i class="fa-solid fa-play"onclick="playAudio('R')">   <audio id="audioPlayerR">
+            <source src="audio/E sound.mp3" type="audio/mpeg"></i><a href="letter_r.html" >Rr</a></div>
+      <div class="S" id="lesson-S" > <i class="fa-solid fa-play"onclick="playAudio('S')">   <audio id="audioPlayerS">
+        <source src="audio/S sound.mp3" type="audio/mpeg"></i><a href="letter_s.html" >Ss</a></div>
+      <div class="T" id="lesson-T" > <i class="fa-solid fa-play"onclick="playAudio('T')">   <audio id="audioPlayerT">
+        <source src="audio/T sound.mp3" type="audio/mpeg"></i><a href="letter_t.html" >Tt</a></div>
+      <div class="U" id="lesson-U" > <i class="fa-solid fa-play"onclick="playAudio('U')">   <audio id="audioPlayerU">
+        <source src="audio/U sound.mp3" type="audio/mpeg"></i><a href="letter_u.html" >Uu</a></div>
+      <div class="W" id="lesson-W" > <i class="fa-solid fa-play"onclick="playAudio('W')">   <audio id="audioPlayerW">
+        <source src="audio/W sound.mp3" type="audio/mpeg"></i><a href="letter_w.html" >Ww</a></div>
+      <div class="Y" id="lesson-Y" > <i class="fa-solid fa-play"onclick="playAudio('Y')">   <audio id="audioPlayerY">
+        <source src="audio/y sound.mp3" type="audio/mpeg"></i><a href="letter_y.html" >Yy</a></div>
+        <div class="modal" id="myModal">
+          <div class="modal-content">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="closeModal()"></button>              <img id="modalImg" src="" alt="Sign Language" style="max-width: 100%; height: auto;">
+          </div>
+        </div>
+  </div>
+ 
+  
+ 
+   <script src="script1.js"></script> <!-- Your custom JavaScript for dynamic content loading -->
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+   <script src="https://kit.fontawesome.com/33b39637ff.js" crossorigin="anonymous"></script>
+ <script src="checklg.js"></script>
+
+</body>
+</html>

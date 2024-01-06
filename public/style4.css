@@ -1,0 +1,356 @@
+
+
+/* Set background image */
+body {
+    background: url(photos/pexels-artem-podrez-6941083.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    font-family: 'Comic Sans MS', cursive;
+    min-height: 100vh;
+    
+
+}
+body::before {
+    background-color: rgba(0, 0, 0, 0.6);
+    content: "";
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+.login-button {
+    background-color: #5ebd1e;
+    color: #fff;
+    font-size: 14px;
+    padding: 8px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: 0.3s background-color;
+}
+
+.navbar {
+    background-color: #1eb0bd;
+    height: 70px;
+    margin: 20px;
+    border-radius: 16px;
+    padding: 0.5rem;
+    box-shadow: 2px 2px 2px;
+}
+
+.navbar-brand, .offcanvas-title {
+    font-weight: 500;
+    color: #d7fbf2;
+    transition: 0.3s color;
+      /* Add your styles for the navbar brand here */
+      color: #fff; /* Change the color as needed */
+      font-size: 30px; /* Adjust the font size */
+      font-weight: bold; /* Make it bold */
+      font-family: 'Comic Sans MS', cursive; /* Add a fun font */
+    
+}
+ /* Add more styles for the logo as needed */
+ .navbar-brand span {
+    display: inline-block;
+    transition: color 0.3s ease-in-out;
+}
+
+.navbar-brand:hover span {
+    color: #33ccff; /* Change the hover color */
+}
+
+
+
+.navbar-toggler {
+    border: none;
+    font-size: 1.25rem;
+}
+
+.navbar-toggler:focus, .btn-close:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+.nav-link {
+    color: #fff;
+    font-weight: 500;
+    position: relative;
+    font-size: 20pxs;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: #000;
+}
+.offcanvas-body, .offcanvas-header{
+    background-color: #1eb0bd;
+    
+}
+
+
+
+/* Styles for the game container */
+#game-container {
+    background-color: rgba(255, 255, 255, 0.9);
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+#star-mcontainer {
+    display: none;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(122, 169, 156, 0.25);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+  display: flex;
+  align-items: center;
+    text-align: center;
+}
+
+#star-container {
+    font-size: 36px;
+    color: gold;
+    margin-bottom: 20px;
+}
+
+/* Styles for the level indicator */
+#level-indicator {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+/* Styles for the timer */
+#timer {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+/* Styles for the game board */
+#game-board {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Adjust the number of columns as needed */
+    gap: 10px;
+    margin: 20px 0;
+}
+
+/* Styles for the memory cards */
+.memory-card {
+    
+    padding: 20px;
+    background-color:   #1eb0bd;
+    color: #fff;
+    font-size: 24px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease-in-out;
+}
+
+.memory-card.flipped {
+    background-color: #fff;
+    color:   #1eb0bd;
+    border: 2px solid   #1eb0bd;
+}
+
+
+#container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+    margin-top: 110px;
+}
+.welcome-screen {
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(122,169,156,0.25);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: 50%;
+    margin: 0 auto; /* Center horizontally */
+    padding: 20px;
+    text-align: center;
+    border-radius: 5px 6px;}
+
+.welcome-screen h2 {
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+.welcome-screen p {
+    font-size: 16px;
+}
+
+.welcome-screen input[type="text"] {
+    padding: 5px;
+    font-size: 16px;
+    width: 100%;
+    margin: 10px 0;
+}
+
+.welcome-screen button, #game-container button, #star-mcontainer button {
+    background-color:   #1eb0bd;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+}
+
+
+/* Styles for the buttons */
+.welcome-screen button {
+    background-color:  #1eb0bd ;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 80%;
+    margin-top: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Styles for the message display */
+#message-display {
+    font-size: 18px;
+    color: #ff0000;
+    font-weight: bold;
+    margin-top: 10px;
+}
+#leaderboard-container {
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(122, 169, 156, 0.25);
+    padding: 20px;
+    width: 40%; /* Adjusted width for better responsiveness */
+   
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
+}
+
+#leaderboard-table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+#leaderboard-table th, #leaderboard-table td {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    padding: 10px;
+}
+
+#leaderboard-table th {
+    background-color:   #1eb0bd;
+    color: #fff;
+}
+
+#leaderboard-table td {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+#leaderboard-table tbody tr:nth-child(even) td {
+    background-color: rgba(238, 238, 238, 0.9);
+}
+
+/* Add this to your CSS file */
+.hidden-letter {
+    visibility: hidden;
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 768px) {
+    #star-mcontainer{
+        width: 80%;
+    }
+    .memory-card {
+        font-size: 20px;
+    }
+    button {
+        padding: 10px 15px;
+    }
+    .welcome-screen {
+        width: 80%; /* Adjusted width for smaller screens */
+    }
+    .welcome-screen h2 {
+        font-size: 20px; /* Adjusted font size for smaller screens */
+    }
+    .welcome-screen button {
+        padding: 10px 15px; /* Adjusted padding for smaller screens */
+    }
+    #leaderboard-table {
+        font-size: 14px;
+    }
+
+    #leaderboard-table th,
+    #leaderboard-table td {
+        padding: 6px 10px;
+    }
+    
+    #container {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+    }
+    .nav-link::before{
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 2px;
+        background-color: #009970;
+        visibility: hidden;
+        transition: 0.3s ease-in-out;
+    }
+
+    .nav-link:hover::before, .nav-link.active::before {
+        width: 100%;
+        visibility: visible;
+    }
+    #game-container, #leaderboard-container{
+        width: 100%;
+    }
+}
+
+
+
+/* Media query for even smaller screens */
+@media screen and (max-width: 480px) {
+   
+    .memory-card {
+        font-size: 18px;
+    }
+    button {
+        padding: 10px 10px;
+    }
+   
+    #container {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+    }
+    
+    #game-container, #leaderboard-container{
+        width: 90%;
+    }
+}
+

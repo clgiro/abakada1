@@ -76,13 +76,12 @@ table {
   .login-button {
     background-color: #5ebd1e;
     color: #fff;
-    font-size: 14px;
-    padding: 8px 20px;
-    border-radius: 50px;
+    font-size: small;
+    padding: 5px ;
+    border-radius: 10px;
     text-decoration: none;
     transition: 0.3s background-color;
 }
-
 
 .navbar {
     background-color: #1eb0bd;

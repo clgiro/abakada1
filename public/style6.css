@@ -35,6 +35,7 @@ body::before {
   transition: 0.3s background-color;
 }
 
+
 .navbar {
   background-color: #1eb0bd;
   height: 70px;
@@ -50,7 +51,7 @@ body::before {
   transition: 0.3s color;
     /* Add your styles for the navbar brand here */
     color: #fff; /* Change the color as needed */
-    font-size: 30px; /* Adjust the font size */
+    font-size: 20px; /* Adjust the font size */
     font-weight: bold; /* Make it bold */
     font-family: 'Comic Sans MS', ; /* Add a fun font */
   

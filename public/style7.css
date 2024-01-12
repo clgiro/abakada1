@@ -33,7 +33,7 @@ body::before {
 
 .navbar {
     background-color: #1eb0bd;
-    height: 50px;
+    height: 60px;
     margin: 15px;
     border-radius: 16px;
     padding: 0.5rem;
@@ -77,7 +77,7 @@ body::before {
     color: #fff;
     font-weight: 500;
     position: relative;
-    font-size: small;
+    font-size: medium;
 }
 
 .nav-link:hover, .nav-link.active {

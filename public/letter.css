@@ -24,7 +24,7 @@ body::before {
 }
 .navbar {
     background-color: #1eb0bd;
-    height: 50px;
+    height: 60px;
     margin: 15px;
     border-radius: 16px;
     padding: 0.5rem;
@@ -39,7 +39,7 @@ body::before {
       color: #fff; /* Change the color as needed */
       font-size: 20px; /* Adjust the font size */
       font-weight: bold; /* Make it bold */
-      font-family: 'Comic Sans MS', ; /* Add a fun font */
+      font-family: 'Comic Sans MS', cursive; /* Add a fun font */
     
 }
  /* Add more styles for the logo as needed */
@@ -80,9 +80,8 @@ body::before {
     color: #fff;
     font-weight: 500;
     position: relative;
-    font-size: small;
+    font-size: medium;
 }
-
 .nav-link:hover, .nav-link.active {
     color: #000;
 }

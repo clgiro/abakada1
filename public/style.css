@@ -335,7 +335,7 @@ a{
     justify-content:center;
     align-items: center; 
     flex-wrap: wrap;
-  margin: auto;
+  
   height: fit-content;
  max-width: 600px;
   padding: 20px;
@@ -471,7 +471,7 @@ a{
     #container2{
         font-size:20px;
         flex-direction: column;
-        margin-top: 200px;
+        margin-top: 250px;
        
     }
    
@@ -480,9 +480,9 @@ a{
 /* Media query for phones */
 @media screen and (max-width: 480px) {
     .box, .target-box {
-        height: 40px; /* Adjust the height for phones */
-        width: 40px; /* Adjust the width for phones */
-        font-size: 20px; /* Adjust the font size for phones */
+        height: 35px; /* Adjust the height for phones */
+        width: 35px; /* Adjust the width for phones */
+        font-size: 15px; /* Adjust the font size for phones */
         padding: 5px; /* Adjust padding for phones */
         margin: 5px; /* Adjust margin for phones */
     }

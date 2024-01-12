@@ -5,14 +5,12 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    margin: 0;
-    padding: 0;
-    display: flex;
     justify-content: center;
     align-items: center;
-    font-family: 'Comic Sans MS', cursive;
+    display: flex;
+    font-family: 'Comic Sans MS';
     height: 100vh;
-     /* Ensure the body takes the full height of the viewport */
+     
 }
 
 body::before {
@@ -44,16 +42,37 @@ table {
   }
   
   #container1,#container{
-    width: 40%;
+    width: 70%;
+    margin: auto; /* Add this line to center the container horizontally */
     background-color: #f2f2f2;
     padding: 20px;
     border: 1px solid rgba(122, 169, 156, 0.25);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
-    margin-top: 50px;
-    height: 80vh;
-    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
   }
+  
+  #container{
+    margin-top: 300px;
+  }
+  .button-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.button-container button {
+    display: none;
+    margin: 5px; /* Adjust as needed */
+}
+
+.button-container button.active {
+    display: inline-block;
+}
+
   .login-button {
     background-color: #5ebd1e;
     color: #fff;
@@ -87,7 +106,7 @@ table {
       color: #fff; /* Change the color as needed */
       font-size: 30px; /* Adjust the font size */
       font-weight: bold; /* Make it bold */
-      font-family: 'Comic Sans MS', cursive; /* Add a fun font */
+      font-family: 'Comic Sans MS', ; /* Add a fun font */
     
 }
  /* Add more styles for the logo as needed */
@@ -131,18 +150,7 @@ table {
     display: flex;
 }
 
-.about-container, .citation-container{
-    color: #fff;
-    text-align: center;
-    padding:20px ;
-    width: 50%;
-    position: absolute;
-    margin-top: 100px;
-   
 
-
-   
-}
 
 .login-button {
     background-color: #009970;
@@ -179,7 +187,7 @@ table {
       color: #fff; /* Change the color as needed */
       font-size: 30px; /* Adjust the font size */
       font-weight: bold; /* Make it bold */
-      font-family: 'Comic Sans MS', cursive; /* Add a fun font */
+      font-family: 'Comic Sans MS', ; /* Add a fun font */
     
 }
  /* Add more styles for the logo as needed */
@@ -218,16 +226,19 @@ table {
     background-color: #1eb0bd;
     
 }
-
+#gameHistoryChart {
+    width: 100%;
+    max-width: 800px; /* Adjust the maximum width based on your design */
+    margin: 20px auto; /* Center the chart and provide some spacing */
+    display: block;
+}
  
   @media (max-width: 768px) {
-    body{
-        flex-direction: column;  
-         margin-top: 150px;
-    } 
+    
 
     #container1, #container{
         width: 90%;
+ 
      
     }
 }

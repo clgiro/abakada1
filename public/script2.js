@@ -319,8 +319,41 @@ wordObjects.sort((a, b) => {
 
 // ... (continue with the rest of the code)
 
+function updateScoreHistory(gameName, score) {
+    // Verify inputs
+    console.log('gameName:', gameName);
+    console.log('score:', score);
 
+    // Calculate percentage (assuming the maximum score is 50)
+    const percentage = (score / 1900) * 100;
 
+    // Add the percentage to the user's scoreHistory
+    fetch('/update-score-history', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ gameName, percentage }),
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`Server responded with status: ${response.status}`);
+        }
+        return response.json();
+    })
+    .then(data => {
+        if (data.success) {
+            console.log('Score history updated successfully:', data);
+        } else {
+            console.error('Failed to update score history. Server response:', data);
+            // Handle error if needed
+        }
+    })
+    .catch(error => {
+        console.error('Error updating score history:', error);
+        // Handle error if needed
+    });
+}
 // Function to start the game
 function startGame() {
     playAgainButton.style.display = "none"; // Hide the Play Again button
@@ -461,6 +494,7 @@ function endGame() {
     stopButton.style.display = "none";
     hintButton.style.display = "none";
     savePlayerScore( gameName, score);
+    updateScoreHistory( gameName, score)
     displayLeaderboard();
 }
 

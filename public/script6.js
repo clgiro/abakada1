@@ -118,6 +118,42 @@ spaceButton.addEventListener("click", () => {
   input.value += " ";
 });
 
+function updateScoreHistory(gameName, score) {
+  // Verify inputs
+  console.log('gameName:', gameName);
+  console.log('score:', score);
+
+  // Calculate percentage (assuming the maximum score is 50)
+  const percentage = (score / 2700) * 100;
+
+  // Add the percentage to the user's scoreHistory
+  fetch('/update-score-history', {
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ gameName, percentage }),
+  })
+  .then(response => {
+      if (!response.ok) {
+          throw new Error(`Server responded with status: ${response.status}`);
+      }
+      return response.json();
+  })
+  .then(data => {
+      if (data.success) {
+          console.log('Score history updated successfully:', data);
+      } else {
+          console.error('Failed to update score history. Server response:', data);
+          // Handle error if needed
+      }
+  })
+  .catch(error => {
+      console.error('Error updating score history:', error);
+      // Handle error if needed
+  });
+}
+
 // Add a click event listener to the backspace button
 const backspaceButton = document.getElementById("backspace-button");
 backspaceButton.addEventListener("click", () => {
@@ -225,6 +261,7 @@ shuffleArray(sentences);
     newGameButton.style.display='inline'
     displayLeaderboard();
     savePlayerScore(gameName, score); 
+    updateScoreHistory(gameName, score);
     gameOver = true; // Set gameOver to true
 
     // Disable letter buttons
@@ -286,24 +323,44 @@ function playCorrectAudio() {
   });
 }
 
+function updateScoreHistory(gameName, score) {
+    // Verify inputs
+    console.log('gameName:', gameName);
+    console.log('score:', score);
 
+    // Calculate percentage (assuming the maximum score is 50)
+    const percentage = (score / 1000) * 100;
 
-function savePlayerScore() {
-  fetch('http://localhost:3000/sentence_save_score', {
-      method: 'POST',
-      headers: {
-          'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ name: playerName, score: score }),
-  })
-  .then(response => response.text())
-  .then(data => {
-      console.log(data);
-  })
-  .catch(error => {
-      console.error('Error:', error);
-  });
+    // Add the percentage to the user's scoreHistory
+    fetch('/update-score-history', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ gameName, percentage }),
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`Server responded with status: ${response.status}`);
+        }
+        return response.json();
+    })
+    .then(data => {
+        if (data.success) {
+            console.log('Score history updated successfully:', data);
+        } else {
+            console.error('Failed to update score history. Server response:', data);
+            // Handle error if needed
+        }
+    })
+    .catch(error => {
+        console.error('Error updating score history:', error);
+        // Handle error if needed
+    });
 }
+
+
+
 
 function displayLeaderboard() {
   // Fetch the leaderboard data from your server

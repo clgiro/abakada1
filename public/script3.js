@@ -1,49 +1,4 @@
-const riddles = [
-    // ... (your riddles data here)
-    { question: "Dalawang batong itim, malayo ang nararating", choices: ["mata", "bibig", "ilong", "paa"], answer: "mata" },
-    { question: "Nakayuko ang reyna di nalalaglag ang korona", choices: ["mansanas", "bayabas", "tsokolate", "sampalok"], answer: "bayabas" },
-    { question: "Ate mo, ate ko, ate ng lahat ng tao.", choices: ["mangga", "bayabas", "atis", "sampalol"], answer: "atis" },
-    { question: "Isang prinsesa nakaupo sa tasa.", choices: ["sibuyas", "bawang", "ibon", "kasoy"], answer: "kasoy" },
-    { question: "Isda ko sa maribeles nasa loob ang kaliskis", choices: ["sili", "paminta", "asin", "mantika"], answer: "sili" },
-    { question: "Ulan nang ulan, hindi pa rin mabasa ang tiyan.", choices: ["dahon ng saging", "dahon ng gabi", "dahon ng atis", "dahon ng bayabas"], answer: "dahon ng gabi" },
-    { question: "Maliit na bahay, puno ng mga patay.", choices: ["aparador", "damit", "posporo", "suklay"], answer: "posporo" },
-    { question: "May puno walang bunga, may dahon walang sanga.", choices: ["baso", "tinedor", "kutsara", "sandok"], answer: "sandok" },
-    { question: "Hayan na si kaka bubuka-bukaka.", choices: ["gunting", "papel", "lapis", "bakal"], answer: "gunting" },
-    { question: "Nagtago si Pedro nakalabas ang ulo", choices: ["pusa", "pako", "damit", "santol"], answer: "pako" },
-    { question: "Dumaan ang hari, nagkagatan ang mga pari.", choices: ["bahay", "pako", "zipper", "lapis"], answer: "zipper" },
-    { question: "Bumili ako ng alipin, mataas pa sa akin.", choices: ["pusa", "damit", "ibon", "sumbrero"], answer: "sumbrero" },
-    { question: "Isa ang pasukan, tatlo ang labasan.", choices: ["blusa", "kamiseta", "ibon", "palda"], answer: "kamiseta" },
-    { question: "Kung kailan mo pinatay, saka pa humaba ang buhay.", choices: ["kandila", "apoy", "bahay", "kubo"], answer: "kandila" },
-    { question: "Ako’y aklat ng panahon, binabago taun-taon.", choices: ["kakanin", "aso", "kalendaryo", "blusa"], answer: "kalendaryo" },
-    {question: "Maraming paa, walang kamay, may pamigkis sa baywang ang ulo’y parang tagayan, alagad ng kalinisan.", choices:["gulay", "gagamba","tela", "walis"], answer: "walis"},
-    {question: "Alalay kong bilugan, puro tubig ang tiyan.", choices:["batya", "tsinelas","damit", "upuan"], answer: "batya"},
-    {question: "Nagbibihis araw-araw, nag-iiba ng pangalan.", choices:["telebisyon", "papel","kalendaryo", "libro"], answer: "kalendaryo"},
-    {question: "Itapon mo kahit saan, babalik sa pinanggalingan.", choices:["suklay", "torompo","yoyo", "alitaptap"], answer: "yoyo"},
-    {question: "Walang paa, lumalakad, walang bibig, nangungusap, walang hindi hinaharap na may dala-dalang sulat.", choices:["sobre", "gunting","dahon", "walis"], answer: "sobre"},
-    {question: "Isang panyong parisukat, kung buksa’y nakakausap.", choices:["guhit", "libro","liham", "sulat"], answer: "sulat"},
-    {question: "Dalawang magkaibigan, magkadikit ang baywang; kapag silay’y nag papasyal, nahahawi ang daanan.", choices:["yoyo", "gunting","langgam", "alitaptap"], answer: "gunting"},
-    {question: "Pitong bundok, pitong lubak, tig-pitong anak.", choices:["gulay", "kalendaryo","sungkaan", "dama"], answer: "sungkaaan"},
-    {question: "Matanda na ang nuno di pa naliligo ", choices:["langgam", "gagamba","aso", "pusa"], answer: "pusa"},
-    {question: "Maliit pa si kumpare, nakakaakyat na sa tore.", choices:["lanngam", "pusa","gagamba", "ipis"], answer: "langgam"},
-    {question: "Heto na si Kaka, bubuka-bukaka.", choices:["kutsara", "gunting","papel", "pera"], answer: "gunting"},
-    {question: "Kaaway ni Bantay, may siyam na buhay.", choices:["gagamba", "ipis","ibon", "pusa"], answer: "pusa "},
-    {question: "Maliit pa si kumare, marunong ng humuni", choices:["kuliglig", "gagamba","ibon", "tigre"], answer: "kuliglig"},
-    {question: "Kahoy ko sa Marigundong, sumasanga’y walang dahon.", choices:["sungay ng kalabaw", "sungay ng usa","sungay ng ipis", "sungay ng baka"], answer: "sungay ng usa"},
-    {question: "Hindi pari, hindi hari, nagdadamit ng sari-sari.", choices:["tutubi", "ipis","paruparo", "ibon"], answer: "paruparo"},
-    {question: "Mataas kung nakaupo mababa kung nakatayo.", choices:["koneho", "ibon","pusa", "aso"], answer: "aso"},
-    {question: "Nakakaluto’y walang init, umuusok kahit na malamig.", choices:["yelo", "apoy","tubig", "lupa"], answer: "yelo"},
-    {question: "Hindi naman hari, hindi naman pare, nagsusuot ng sarisari", choices:["tindahan", "sampayan","gusali", "bahay"], answer: "sampayan"},
-    {question: "Baka ko sa palupandan, unga’y nakakarating kahit saan.", choices:["ulan", "buhawi","kulog", "lindol"], answer: "kulog"},
-    {question: "May bintana nguni’t walang bubungan, may pinto nguni’t walang hagdanan.", choices:["pintuan", "paaralan","simbahan", "kumpisalan"], answer: "kumpisalan"},
-    {question: "Palda ni Santa Maria, ang kulay ay iba-iba", choices:["bahaghari", "ulap","araw", "bituin"], answer: "bahaghari"},
-    {question: "Ako ay may kaibigan, kasama ko kahit saan.", choices:["suka", "anino","liwanag", "amoy"], answer: "anino"},
-    {question: "Puno ay layu-layo, dulo’y tagpu-tagpo.", choices:["paaralan", "tindahan","bahay", "kubo"], answer: "bahay"},
-    {question: "Buto’t balat lumilipad.", choices:["kotse", "eroplano","tsokolate", "saranggola"], answer: "saranggola"},
-
-
-
-
-];  
+const riddles = [];
 
 let currentRiddleIndex = 0;
 let score = 0;
@@ -69,7 +24,27 @@ document.getElementById("start-game-button").addEventListener("click", function 
     
 });
 
+async function getQuestions() {
+    try {
+        const response = await fetch('/riddle_get-questions');
+        if (!response.ok) {
+            throw new Error(`Server responded with status: ${response.status}`);
+        }
+        const data = await response.json();
 
+        console.log('Server Response:', data); // Log the response
+
+        if (data.success) {
+            riddles.push(...data.questions);
+            shuffleArray(riddles);
+        } else {
+            console.error('Failed to fetch questions:', data.error);
+        }
+    } catch (error) {
+        console.error('Error fetching questions:', error);
+    }
+}
+getQuestions();
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -163,6 +138,7 @@ function endGame() {
     clearInterval(timer);
     newGameButton.style.display = "block";
     savePlayerScore(gameName, score)
+   updateScoreHistory(gameName, score)
     displayLeaderboard();
 }
 
@@ -179,6 +155,7 @@ function startNewGame() {
     newGameButton.style.display = "none";
     stopGameButton.style.display="block";
     displayLeaderboard(); 
+    
     gameContainer.style.display = 'block';
             leaderboardContainer.style.display = 'block';
             welcomeScreen.style.display='none'
@@ -198,6 +175,52 @@ function confirmStopGame() {
         endGame();
     }
 }
+function updateScoreHistory(gameName, score) {
+    // Verify inputs
+    console.log('gameName:', gameName);
+    console.log('score:', score);
+
+    // Fetch total number of questions
+    fetch('/riddle_get-question-count') // Assuming you have an endpoint to get the question count
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`Server responded with status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            if (data.success) {
+                // Calculate percentage based on the total number of questions
+                const totalQuestions = data.questionCount;
+                const percentage = (score / totalQuestions) * 100;
+
+                // Add the percentage to the user's scoreHistory
+                return fetch('/update-score-history', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ gameName, percentage }),
+                });
+            } else {
+                throw new Error('Failed to fetch question count.');
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                console.log('Score history updated successfully:', data);
+            } else {
+                console.error('Failed to update score history. Server response:', data);
+                // Handle error if needed
+            }
+        })
+        .catch(error => {
+            console.error('Error updating score history:', error);
+            // Handle error if needed
+        });
+}
+
 
 function playBackgroundMusic() {
     const backgroundMusic = document.getElementById("backgroundMusic");
@@ -211,28 +234,9 @@ function playBackgroundMusic() {
     }
 }
 // Function to save player scores
-function savePlayerScore() {
-    fetch('http://localhost:3000/riddle_save_score', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ name: playerName, score: score }),
-    })
-    .then(response => response.text())
-    .then(data => {
-        console.log(data);
-    })
-    .catch(error => {
-        console.error('Error:', error);
-    });
-}
-
 
 
 function savePlayerScore(gameName, score) {
-    // Check if the score is higher than the stored highest score
-    
     fetch('/save-score', {
         method: 'POST',
         headers: {
@@ -244,7 +248,7 @@ function savePlayerScore(gameName, score) {
     .then(data => {
         if (data.success) {
             console.log(`Score for ${gameName} saved successfully:`, data);
-            scoreSaved = true;
+           
         } else {
             console.error(`Failed to save score for ${gameName}. Server response:`, data);
             // Handle error if needed

@@ -11,8 +11,8 @@
         <!-- Buttons to Choose between Sign Up and Login -->
         <h1>Abakada</h1>
         <div class="button-container">
-            <button onclick="showSignUpForm()">Mag sign Up</button>
-            <button onclick="showLoginForm()">Mag login</button>
+            <button onclick="showSignUpForm()">Sign up</button>
+            <button onclick="showLoginForm()">Log in</button>
         </div>
 
         <!-- Sign-up Form -->
@@ -22,7 +22,7 @@
                 <!-- Your sign-up form fields go here -->
 
                 <label for="username">Pangalan:</label>
-                <input type="text" id="username" name="username" required>
+                <input type="text" id="username" name="username"  pattern="^[^\s]+$" required>
 
                 <label for="password">Password:</label>
                 <input type="password" id="password" name="password" required  placeholder="10 characters o higit pa">

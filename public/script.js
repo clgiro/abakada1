@@ -151,6 +151,7 @@
         isGameOver = false;
     
         savePlayerScore(gameName, score);
+        updateScoreHistory(gameName, score);
         displayLeaderboard();
     
         // Call startGame after the player clicks "OK"
@@ -229,6 +230,42 @@
         }
 
         return selectedLetters;
+    }
+
+    function updateScoreHistory(gameName, score) {
+        // Verify inputs
+        console.log('gameName:', gameName);
+        console.log('score:', score);
+    
+        // Calculate percentage (assuming the maximum score is 50)
+        const percentage = (score / 1000) * 100;
+    
+        // Add the percentage to the user's scoreHistory
+        fetch('/update-score-history', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ gameName, percentage }),
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`Server responded with status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            if (data.success) {
+                console.log('Score history updated successfully:', data);
+            } else {
+                console.error('Failed to update score history. Server response:', data);
+                // Handle error if needed
+            }
+        })
+        .catch(error => {
+            console.error('Error updating score history:', error);
+            // Handle error if needed
+        });
     }
 
     function updateBoxLetters(letters) {

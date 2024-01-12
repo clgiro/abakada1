@@ -7,9 +7,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha384-FnpXFGwJ4t8eW5v5/j4NraOKfy4pXJf8b6QshF90EXOvW47j1g6ix1G5a6fKO5e0" crossorigin="anonymous">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-
-    <link rel="stylesheet" href="dashboard.css">
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3.1.0/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="dashboard.css">
+    
 </head>
 <body>
     <nav class="navbar navbar-expand-lg fixed-top">
@@ -28,7 +29,6 @@
                         </li>
                     
                         <li class="nav-item">
-                           
                             <a class="nav-link mx-lg-2" href="games.html" > <i class="fa-solid fa-gamepad fa-2x" style="color: #14033a; display: inline-flex;"><p style="font-size: medium; display: flex; padding-top: 10px; padding-left: 10px;">Mga Laro</p></i></a>                          
                         </li>
                         <li class="nav-item">
@@ -41,8 +41,8 @@
                             <a class="nav-link mx-lg-2" href="about.html">Tungkol</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link mx-lg-2" href="dashboard">Profile</a>
-                      </li>
+                            <a class="nav-link mx-lg-2" href="dashboard">Profile</a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -55,46 +55,169 @@
     </nav>
     
     <div id="container1">
-        <h1>Hi <%= user.username %></h1>
-        <li>Ayusin ang salita: <%= user.scores.wordpuzzle %></li>
-        <li>I pares: <%= user.scores.memorymatch %></li>
-        <li>Bugtong: <%= user.scores.riddle %></li>
-        <li>Pangungusap: <%= user.scores.sentence %></li>
-        <li>Hulihin ang abakada: <%= user.scores.catchtheletter %></li>
-        <li>Pagsusulit: <%= user.scores.quiz %>/40</li>
-        <!-- Other elements -->
-
-        <h2>Talaan</h2>
-        <div>
-            <canvas id="quizProgressChart" width="400" height="200"></canvas>
-        </div>
-       
-        <!-- Add more elements as needed -->
-    </div> <div id="container">
-        <div id="gameMessages">
-            <h3>Pagsusuri:</h3>
-            <ul>
-                <li id="quizMessage"></li>
-                <li id="wordPuzzleMessage"></li>
-                <li id="memorymatchMessage"></li>
-                <li id="riddleMessage"></li>
-                <li id="sentenceMessage"></li> 
-                 <li id="catchtheletterMessage"></li>
-                <!-- Add more list items for other games -->
-            </ul>
-        </div>
         
-        <div id="overallMessage">
-            <h3>Pangkalahatang pag-susuri:</h3>
-            <p id="overallEvaluation"></p>
-        </div>
+        <h1>Hi <%= user.username %></h1>
+        <label for="gameSelector">Select a Game:</label>
+            <select id="gameSelector" onchange="loadGameHistoryChart(this.value)">
+    <option value="catchtheletter">Hulihin ang titik</option>
+    <option value="memorymatch">I pares</option>
+    <option value="quiz">Pagssusulit</option>
+    <option value="wordpuzzle">Ayusin ang salita</option>
+    <option value="sentence">Pangungusap</option>
+    <option value="riddle">Bugtong</option>
+         </select>
 
-   <p id="link" style="display: none;">Pag-aralan ang mga <a href="index.html">leksyon</a></p>
+        <!-- Add buttons for other games as needed -->
+
+        <canvas id="gameHistoryChart" width="600" height="400"></canvas>
+      
+      
+            <table border="1">
+                <thead>
+                    <tr>
+                    
+                        <th>Game</th>
+                        <th>Score</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% Object.keys(user.scores).forEach(function(game) { %>
+                        <tr>
+                            
+                            <td><%= game %></td>
+                            <td><%= user.scores[game] %></td>
+                        </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+            <div id="gameMessages">
+                <h3>Pagsusuri:</h3>
+                <ul>
+                    <li id="quizMessage"></li>
+                    <li id="wordPuzzleMessage"></li>
+                    <li id="memorymatchMessage"></li>
+                    <li id="riddleMessage"></li>
+                    <li id="sentenceMessage"></li> 
+                     <li id="catchtheletterMessage"></li>
+                    <!-- Add more list items for other games -->
+                </ul>
+            </div>
+            <canvas id="quizProgressChart" width="400" height="200"></canvas>
+            <div id="overallMessage">
+                <h3>Pangkalahatang pag-susuri:</h3>
+                <p id="overallEvaluation"></p>
+            </div>
+    
+       <p id="link" style="display: none;">Pag-aralan ang mga <a href="index.html">leksyon</a></p>
+        
+        
     </div>
 
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
+        let selectedGame = ''; // Global variable to store the selected game
 
-     const link=document.getElementById("link")
+        function loadGameHistoryChart(game) {
+            selectedGame = game; // Update the selected game
+
+            // Fetch game history data from the server based on the selected game
+            fetch(`/game-history-chart?game=${selectedGame}`)
+                .then((response) => response.json())
+                .then((data) => {
+                    console.log(`Game History Chart Data for ${selectedGame}:`, data);
+
+                    // Check if gameHistory is an object
+                    if (data.success && data.gameHistory && typeof data.gameHistory === 'object') {
+                        // Render the game history chart based on the selected game
+                        renderGameHistoryChart(data.gameHistory[selectedGame]);
+                    } else {
+                        console.error(`Invalid game history data structure for ${selectedGame}:`, data);
+                    }
+                })
+                .catch((error) => console.error(`Error fetching game history chart data for ${selectedGame}:`, error));
+        }
+
+        function renderGameHistoryChart(gameHistory) {
+    const gameHistoryChartCanvas = document.getElementById('gameHistoryChart');
+
+    // Destroy the existing chart if it exists
+    if (window.myGameHistoryChart) {
+        window.myGameHistoryChart.destroy();
+    }
+
+    const gameHistoryChartContext = gameHistoryChartCanvas.getContext('2d');
+
+    // Extract labels (timestamps) and data (percentages) from game history
+    const labels = gameHistory.map(entry => entry.timestamp);
+    const data = gameHistory.map(entry => entry.percentage);
+
+    // Convert timestamps to string labels with date and time
+    const stringLabels = labels.map(timestamp => {
+        const date = new Date(timestamp);
+        return `${date.toLocaleDateString()} ${date.toLocaleTimeString()}`;
+    });
+
+    // Generate random colors for each bar
+    const backgroundColors = data.map(() => getRandomColor());
+
+    window.myGameHistoryChart = new Chart(gameHistoryChartContext, {
+    type: 'bar',
+    data: {
+        labels: stringLabels,
+        datasets: [{
+            label: 'Kasaysayan ng Laro', // Translated label to Filipino
+            data: data,
+            backgroundColor: backgroundColors,
+            borderColor: 'black',
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true,
+                max: 100
+            }
+        }
+    }
+});
+
+
+}
+
+// Function to generate a random color
+function getRandomColor() {
+    const letters = '0123456789ABCDEF';
+    let color = '#';
+    for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
+
+// Function to toggle the active class based on the selected game
+function toggleGameButton(gameName) {
+    const buttons = document.querySelectorAll('#gameButtonsContainer button');
+    buttons.forEach(button => {
+        if (button.getAttribute('data-game') === gameName) {
+            button.classList.add('active');
+        } else {
+            button.classList.remove('active');
+        }
+    });
+}
+
+// Example usage:
+const gameSelector = document.getElementById('gameSelector');
+
+gameSelector.addEventListener('change', function () {
+    const selectedGame = gameSelector.value;
+    toggleGameButton(selectedGame);
+    loadGameHistoryChart(selectedGame);
+});
+
+const link=document.getElementById("link")
         // Raw scores for each activity
         const quizScore = <%= user.scores.quiz %>;
     const wordPuzzleScore = <%= user.scores.wordpuzzle %>;
@@ -198,9 +321,8 @@
     // Update the content of the overall evaluation HTML element
     document.getElementById('overallEvaluation').textContent = overallMessage;
     </script>
-     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-     <script src="https://kit.fontawesome.com/33b39637ff.js" crossorigin="anonymous"></script>
-   <script src="checklg.js"></script>
-  
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/33b39637ff.js" crossorigin="anonymous"></script>
+    <script src="checklg.js"></script>
 </body>
 </html>

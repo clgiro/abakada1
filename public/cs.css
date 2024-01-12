@@ -9,7 +9,7 @@ body {
     display: flex;
     justify-content: center;
     
-    font-family: 'Comic Sans MS', cursive;
+    font-family: 'Comic Sans MS'; 
     height: 100vh;
     /* Ensure the body takes the full height of the viewport */
 }
@@ -56,7 +56,7 @@ body::before {
       color: #fff; /* Change the color as needed */
       font-size: 30px; /* Adjust the font size */
       font-weight: bold; /* Make it bold */
-      font-family: 'Comic Sans MS', cursive; /* Add a fun font */
+      font-family: 'Comic Sans MS',  /* Add a fun font */
     
 }
  /* Add more styles for the logo as needed */
@@ -144,7 +144,7 @@ body::before {
       color: #fff; /* Change the color as needed */
       font-size: 30px; /* Adjust the font size */
       font-weight: bold; /* Make it bold */
-      font-family: 'Comic Sans MS', cursive; /* Add a fun font */
+      font-family: 'Comic Sans MS', ; /* Add a fun font */
     
 }
  /* Add more styles for the logo as needed */

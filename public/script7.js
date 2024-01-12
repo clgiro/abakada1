@@ -1,54 +1,4 @@
-const riddles = [
-    { question: "Ang ba-ta ay ma-sa-__", choices: ["ya", "wa", "sa", "ga"], answer: "ya" },
-    { question: "Si Mi-na ay nag-ba-ba-__", choices: ["pa", "ga", "in", "sa"], answer: "sa" },
-    { question: "Ang ba-hag-ha-ri ay ma-__-lay", choices: ["mu", "ti", "ku", "ya"], answer: "ku" },
-    { question: "Si A-na ay na-ka-ba-bad sa a-__", choices: ["mu", "raw", "ku", "ya"], answer: "raw" },
-    { question: "Ang a-la-___ ng a-tis ay ka-mang-ha-mang-ha", choices: ["kit", "yan", "mat", "kan"], answer: "mat" },
-    { question: "Ang a-poy ay hu-__-hi-na", choices: ["ol", "ki","mi", "ta"], answer: "mi" },
-    { question: "Si A-ni ay nag-ba-ba-sa ng ak-___", choices: ["lat", "wa", "sa", "ga"], answer: "lat" },
-    { question: "Ang ale ay a-ba-lang gu-ma-__-wa ng a-pa-ra-dor", choices: ["ga", "ga", "in", "sa"], answer: "ga" },
-    { question: "Bu-mi-li a-ko ng ba-gong ___-ro sa tin-da-han.", choices: ["mu", "lib", "ku", "ya"], answer: "lib" },
-    { question: "Bu-__-si-ta ka-mi sa ma-gan-dang ba-hay ni Lo-la", choices: ["mi", "yan", "mat", "kan"], answer: "mi" },
-    { question: "Bi-ni-si-ta na-min ang ba-___ ng a-ming ka-i-bi-gan.", choices: ["hay", "kat","tso", "pok"], answer: "hay" },
-    { question: "Bu-mi-lang a-ko ng sam-pung bu-___-lak sa har-din.", choices: ["ya", "wa", "sa", "lak"], answer: "lak" },
-    { question: "Nag-lu-to si Na-nay ng __-sa-rap na bi-ko.", choices: ["pa", "ga", "in", "ma"], answer: "ma" },
-    { question: "Di-na-law ka-mi sa da-ti na-ming ba-___ sa Du-ma-gue-te.", choices: ["mu", "ti", "hay", "ya"], answer: "hay" },
-    { question: "Du-mu-du-log sa duk-tor ang da-la-wang ___-ka-i-bi-gan..", choices: ["kit", "mag", "mat", "kan"], answer: "mag" },
-    { question: "Du-ma-ting ang di-___, ka-ya't a-gad a-kong su-mi-long sa lo-ob ng ba-hay.", choices: ["yip", "lim","tso", "pok"], answer: "lim" },
-    { question: "Du-ma-yo ka-mi sa da-lam-pa-si-gan at nag-la-ro sa bu-__-ngin.", choices: ["ha", "ti", "ku", "ya"], answer: "ha" },
-    { question: "Da-la-wang da-ang pi-__ ang ha-la-ga ng ba-gong la-ru-an ni A-lex.", choices: ["so", "wa", "sa", "ga"], answer: "so" },
-    { question: "Si E-ba ay na-sa Es-___-la-han", choices: ["pa", "ga", "kwe", "sa"], answer: "kwe" },
-    { question: "Ma-ha-la-ga ang e-__-kas-yon", choices: ["mu", "ti", "ku", "du"], answer: "du" },
-    { question: "Si E-ma ay su-__-kay sa E-ro-pla-no", choices: ["kit", "yan", "ma", "kan"], answer: "ma" },
-    { question: "Nag e-e-her-sis-yo si El-yas tu-wing u-ma-ga", choices: ["yip", "kat","her", "pok"], answer: "her" },
-    { question: "Ma-ta-as ang __-kul-tu-ra", choices: ["ya", "es", "sa", "ga"], answer: "es" },
-    { question: "Gus-to ko ang gu-lay, la-lo na ang mga __-lay mu-la sa a-ming har-din.", choices: ["gu", "ti", "ku", "ya"], answer: "gu" },
-    { question: "Gu-mi-sing ako nang ma-a-ga u-pang mag-si-mu-la sa a-king mga ga-__-in", choices: ["kit", "yan", "mat", "wa"], answer: "wa" },
-    { question: "Gus-to na-min ng ma-___-dang pa-na-hon u-pang mag-la-ro sa la-bas.", choices: ["yip", "kat","gan", "pok"], answer: "gan" },
-    { question: "Gus-to kong mag-ba-sa ng mga ma-ga-gan-dang ku-wen-to ba-go ma-__-log.", choices: ["tu", "yan", "mat", "wa"], answer: "tu" },
-    { question: "Gus-to kong gu-mu-___ at mag-ku-lay ga-mit ang a-king mga la-pis.", choices: ["ya", "wa", "hit", "ga"], answer: "hit" },
-    { question: "Ha-bang nag-la-la-ro sa ___-din, na-ki-ta na-min ang i-sang pa-ru-pa-ro.", choices: ["pa", "ga", "har", "sa"], answer: "har" },
-    { question: "Hi-na-ya-an na-min ang a-ming mga __-ri-li na lu-ma-ngoy sa i-log nang wa-lang ka-ba.", choices: ["sa", "yan", "mat", "kan"], answer: "sa" },
-    { question: "Hi-na-ha-nap-ha-nap na-min ang ba-___-yon tu-wing tag-init.", choices: ["yip", "kat","tso", "kas"], answer: "kas" },
-    { question: "Ha-bang u-mu-ul-an, na-tu-tu-wa a-kong tu-ma-lon sa mga ma-la-la-king bu-___.", choices: ["mu", "tas", "ku", "ya"], answer: "tas" },
-    { question: "Ma-sa-___ ang is-da", choices: ["ya", "wa", "sa", "rap"], answer: "rap" },
-    { question: "ma-li-__-nag ang i-law", choices: ["wa", "ga", "in", "sa"], answer: "wa" },
-    { question: "ang i-ngay ng ins-tru-___-to", choices: ["mu", "ti", "ku", "men"], answer: "men" },
-    { question: "Ki-nu-ha ko ang a-king kwa-___-no sa me-sa", choices: ["kit", "der", "mat", "kan"], answer: "der" },
-    { question: "Ki-nu-ha ng a-king ka-pa-tid ang a-king ___-ko-la-te.", choices: ["yip", "kat","tso", "pok"], answer: "tso" },
-    { question: "Ang La-pis ay ka-ta-bi ng la-___-yan ng lu-mang da-mit", choices: ["lag", "wa", "sa", "ga"], answer: "lag" },
-    { question: "Ang ___-do ay ma-la-ki", choices: ["pa", "ga", "in", "mun"], answer: "mun" },
-    { question: "Mu-si-__ ang na-is ni Mi-lo na ma-tu-tu-nan", choices: ["ka", "ti", "ku", "ya"], answer: "ka" },
-    { question: "Ma-ba-ngo ang __-nog na man-sa-nas", choices: ["kit", "yan", "mat", "hi"], answer: "hi" },
-    { question: "Ang Ni-yog ay ma-ra-__ sa na-yon", choices: ["yip", "kat","tso", "mi"], answer: "mi" },
-    { question: "Ang Nu-___ ni Ni-na ay ma-la-ki", choices: ["ya", "wa", "nal", "ga"], answer: "nal" },
-    { question: "Ma-ra-ming Nu-no ang  ___-la-la-kad sa pun-so", choices: ["pa", "ga", "nag", "sa"], answer: "nag" },
-    { question: "Sa Nor-te si Nin-ya nag-a-___ ng ing-les", choices: ["mu", "ral", "ku", "ya"], answer: "ral" },
-
-
-
-
-];  
+const riddles = [];
 
 let currentRiddleIndex = 0;
 let score = 0;
@@ -74,7 +24,27 @@ document.getElementById("start-game-button").addEventListener("click", function 
     
 });
 
+async function getQuestions() {
+    try {
+        const response = await fetch('/get-questions');
+        if (!response.ok) {
+            throw new Error(`Server responded with status: ${response.status}`);
+        }
+        const data = await response.json();
 
+        console.log('Server Response:', data); // Log the response
+
+        if (data.success) {
+            riddles.push(...data.questions);
+            shuffleArray(riddles);
+        } else {
+            console.error('Failed to fetch questions:', data.error);
+        }
+    } catch (error) {
+        console.error('Error fetching questions:', error);
+    }
+}
+getQuestions();
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -162,11 +132,13 @@ function endGame() {
     }
 
     stopGameButton.style.display = "none";
-    messageElement.textContent = `Laro natapos! Iyong Score: ${score}`;
-     alert(`Laro natapos! Iyong Score: ${score}`) ;
+    messageElement.textContent = `Laro natapos! Iyong Score: ${score} sa ${riddles.length}`;
+   
+   alert(`Laro natapos! Iyong Score: ${score} sa ${riddles.length}`)
     clearInterval(timer);
     newGameButton.style.display = "block";
     savePlayerScore(gameName, score)
+   updateScoreHistory(gameName, score)
     displayLeaderboard();
 }
 
@@ -183,6 +155,7 @@ function startNewGame() {
     newGameButton.style.display = "none";
     stopGameButton.style.display="block";
     displayLeaderboard(); 
+    
     gameContainer.style.display = 'block';
             leaderboardContainer.style.display = 'block';
             welcomeScreen.style.display='none'
@@ -202,6 +175,52 @@ function confirmStopGame() {
         endGame();
     }
 }
+function updateScoreHistory(gameName, score) {
+    // Verify inputs
+    console.log('gameName:', gameName);
+    console.log('score:', score);
+
+    // Fetch total number of questions
+    fetch('/get-question-count') // Assuming you have an endpoint to get the question count
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`Server responded with status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            if (data.success) {
+                // Calculate percentage based on the total number of questions
+                const totalQuestions = data.questionCount;
+                const percentage = (score / totalQuestions) * 100;
+
+                // Add the percentage to the user's scoreHistory
+                return fetch('/update-score-history', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ gameName, percentage }),
+                });
+            } else {
+                throw new Error('Failed to fetch question count.');
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                console.log('Score history updated successfully:', data);
+            } else {
+                console.error('Failed to update score history. Server response:', data);
+                // Handle error if needed
+            }
+        })
+        .catch(error => {
+            console.error('Error updating score history:', error);
+            // Handle error if needed
+        });
+}
+
 
 function playBackgroundMusic() {
     const backgroundMusic = document.getElementById("backgroundMusic");
@@ -215,28 +234,9 @@ function playBackgroundMusic() {
     }
 }
 // Function to save player scores
-function savePlayerScore() {
-    fetch('http://localhost:3000/riddle_save_score', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ name: playerName, score: score }),
-    })
-    .then(response => response.text())
-    .then(data => {
-        console.log(data);
-    })
-    .catch(error => {
-        console.error('Error:', error);
-    });
-}
-
 
 
 function savePlayerScore(gameName, score) {
-    // Check if the score is higher than the stored highest score
-    
     fetch('/save-score', {
         method: 'POST',
         headers: {
@@ -248,7 +248,7 @@ function savePlayerScore(gameName, score) {
     .then(data => {
         if (data.success) {
             console.log(`Score for ${gameName} saved successfully:`, data);
-            scoreSaved = true;
+           
         } else {
             console.error(`Failed to save score for ${gameName}. Server response:`, data);
             // Handle error if needed

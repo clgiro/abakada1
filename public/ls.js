@@ -134,7 +134,15 @@ async function submitLoginForm(event) {
         alert('An error occurred. Please try again.');
     }
 }
-
+$(document).ready(function() {
+    // Attach a blur event handler to the username input
+    $('#username').on('blur', function() {
+        // Remove unnecessary spaces using trim() and replace()
+        var cleanedValue = $(this).val().trim().replace(/\s+/g, '');
+        // Set the cleaned value back to the input
+        $(this).val(cleanedValue);
+    });
+});
 
 
 // Call the checkLoggedIn function when your page loads

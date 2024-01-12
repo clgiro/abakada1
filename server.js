@@ -6,7 +6,10 @@ const User = require('./Userm'); // Adjust the path accordingly
 const path = require('path');
 const cors = require('cors');
 const http = require('http');
+const router = express.Router();
 
+const QuizQuestion = require('./quiz');
+const Riddle = require('./riddle');
 
 
 const bcrypt = require('bcrypt');
@@ -33,6 +36,27 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 db.once('open', () => {
   console.log('Connected to MongoDB');
 });
+app.get('/get-questions', async (req, res) => {
+  try {
+    const questions = await QuizQuestion.find();
+    res.json({ success: true, questions });
+  } catch (error) {
+    console.error('Error fetching questions:', error);
+    res.json({ success: false, error: 'Failed to fetch questions' });
+  }
+});
+app.get('/riddle_get-questions', async (req, res) => {
+  try {
+    const questions = await Riddle.find();
+    res.json({ success: true, questions });
+  } catch (error) {
+    console.error('Error fetching questions:', error);
+    res.json({ success: false, error: 'Failed to fetch questions' });
+  }
+});
+
+
+
 
 // Create a new instance of MongoDBStore
 const store = MongoDBStore.create({
@@ -250,6 +274,103 @@ app.get('/dashboard', checkLoggedIn, (req, res) => {
   console.log(req.session); // Log the session object
   const user = req.session.user;
   res.render('dashboard', { user });
+});
+
+app.post('/update-score-history', async (req, res) => {
+  const { gameName, percentage } = req.body;
+
+  // Assuming you have the user's username stored in the session
+  const username = req.session.user.username;
+
+  try {
+      // Find the user in the database
+      const user = await User.findOne({ username });
+
+      if (!user) {
+          return res.status(404).json({ success: false, error: 'User not found' });
+      }
+
+      // Update the user's history for the specified game
+      if (user.history && user.history[gameName]) {
+          user.history[gameName].push({ gameName, percentage });
+      } else {
+          console.error(`Invalid gameName or history array for ${gameName}`);
+          return res.status(400).json({ success: false, error: 'Invalid gameName or history array' });
+      }
+
+      // Save the updated user object
+      await user.save();
+
+      return res.status(200).json({ success: true, message: 'Score history updated successfully' });
+  } catch (err) {
+      console.error('Error updating score history:', err);
+      return res.status(500).json({ success: false, error: 'Internal Server Error' });
+  }
+});
+
+// Add this route before app.listen()
+app.get('/game-history-chart', async (req, res) => {
+  try {
+    // Check if the user is logged in
+    if (!req.session.user) {
+      return res.status(401).json({ success: false, error: 'Unauthorized' });
+    }
+
+    const userId = req.session.user._id;
+
+    // Fetch and send game history data for the logged-in user
+    const user = await User.findById(userId);
+
+    if (!user) {
+      return res.status(404).json({ success: false, error: 'User not found' });
+    }
+
+    let gameHistory = {};
+
+    if (user.history && typeof user.history === 'object') {
+      Object.keys(user.history).forEach((gameName) => {
+        if (Array.isArray(user.history[gameName])) {
+          if (!gameHistory[gameName]) {
+            gameHistory[gameName] = [];
+          }
+          // Concatenate the arrays instead of spreading the individual objects
+          gameHistory[gameName] = gameHistory[gameName].concat(user.history[gameName]);
+        } else {
+          console.error(`Invalid history data structure for ${gameName}. Expected an array, got:`, user.history[gameName]);
+        }
+      });
+
+      res.json({ success: true, gameHistory });
+    } else {
+      console.error('Unexpected user history data structure:', user);
+      res.status(500).json({ success: false, error: 'Unexpected user history data structure' });
+    }
+  } catch (error) {
+    console.error('Error in /game-history-chart route:', error);
+    res.status(500).json({ success: false, error: error.message });
+  }
+});
+
+
+// Inside your server code (e.g., server.js or routes file)
+app.get('/get-question-count', async (req, res) => {
+  try {
+      const questionCount = await QuizQuestion.countDocuments();
+      res.json({ success: true, questionCount });
+  } catch (error) {
+      console.error('Error fetching question count:', error);
+      res.json({ success: false, error: 'Failed to fetch question count' });
+  }
+});
+
+app.get('/riddle_get-question-count', async (req, res) => {
+  try {
+      const questionCount = await Riddle.countDocuments();
+      res.json({ success: true, questionCount });
+  } catch (error) {
+      console.error('Error fetching question count:', error);
+      res.json({ success: false, error: 'Failed to fetch question count' });
+  }
 });
 
 const port = process.env.PORT || 4000;

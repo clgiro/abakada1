@@ -103,8 +103,8 @@ body::before {
 
 .navbar {
     background-color: #1eb0bd;
-    height: 70px;
-    margin: 20px;
+    height: 50px;
+    margin: 15px;
     border-radius: 16px;
     padding: 0.5rem;
     box-shadow: 2px 2px 2px;
@@ -123,7 +123,7 @@ body::before {
       color: #fff; /* Change the color as needed */
       font-size: 20px; /* Adjust the font size */
       font-weight: bold; /* Make it bold */
-      font-family: 'Comic Sans MS', ; /* Add a fun font */
+      font-family: 'Comic Sans MS', cursive; /* Add a fun font */
     
 }
  /* Add more styles for the logo as needed */
@@ -152,7 +152,7 @@ body::before {
     color: #fff;
     font-weight: 500;
     position: relative;
-    font-size: 20px;
+    font-size: small;
 }
 
 .nav-link:hover, .nav-link.active {
@@ -329,161 +329,3 @@ a{
 
         }
    
-#game-container{
-  
-    display: flex;
-    justify-content:center;
-    align-items: center; 
-    flex-wrap: wrap;
-  
-  height: fit-content;
- max-width: 600px;
-  padding: 20px;
-  
-
-}
-
-
-/* Styling for each box */
-.box , .target-box{
-    height: 60px;
-    width: 60px;
-    border-radius: 5px 6px;
-    margin: 10px;
-    box-shadow: 2px 2px 2px 0px #000;
-    padding: 10px;
-    font-size: 30px;
-    flex-wrap: wrap;
-    position: relative;
-    transition: 1s;
-    cursor: pointer;
-    text-align: center;
-    color: #fff;
-}
-
-/* Different background colors for boxes */
-
-.leaderboard-container {
-    text-align: center;
-    margin: 20px;
-}
-
-/* Leaderboard table style */
-#leaderboard-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-/* Leaderboard table header style */
-#leaderboard-table th {
-    background-color: #f2f2f2;
-}
-
-/* Leaderboard table header cells */
-#leaderboard-table th {
-    padding: 12px 15px;
-    text-align: left;
-}
-
-/* Leaderboard table data cells */
-#leaderboard-table td {
-    padding: 8px 15px;
-}
-
-/* Alternating row background color for better readability */
-#leaderboard-table tbody tr:nth-child(even) {
-    background-color: #f2f2f2;
-}
-
-/* Hover effect on rows */
-#leaderboard-table tbody tr:hover {
-    background-color: #ddd;
-}
-.welcome-screen {
-    background: rgba(14, 185, 48, 0.79);
-    width: 300px;
-    margin: 0 auto; /* Center horizontally */
-    padding: 20px;
-    text-align: center;
-    border-radius: 5px 6px;
-}
-
-.welcome-screen h2 {
-    font-size: 24px;
-    margin: 10px 0;
-}
-
-.welcome-screen p {
-    font-size: 16px;
-}
-
-.welcome-screen input[type="text"] {
-    padding: 5px;
-    font-size: 16px;
-    width: 100%;
-    margin: 10px 0;
-}
-
-.welcome-screen button, #container button {
-    background-color: #07ae15;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    width: 100%;
-}
-
-/* Add this style to your CSS */
-
-/* Styling for the correct box */
-
-#container2{
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: #fff;
-    align-items: center;
-    position: absolute;
-    margin: auto;
-    
-
-   
-}
-.hide-letter {
-    visibility: hidden;
-}
-
-@media screen and (max-width: 768px) {
-   
-    
-    #maincontainer{
-        flex-direction: column;
-    }
-    .box, .target-box {
-        height: 70px; /* Adjust the height for tablets */
-        width: 70px; /* Adjust the width for tablets */
-        font-size: 40px; /* Adjust the font size for tablets */
-        
-    }
-    #container2{
-        font-size:20px;
-        flex-direction: column;
-        margin-top: 250px;
-       
-    }
-   
-}
-
-/* Media query for phones */
-@media screen and (max-width: 480px) {
-    .box, .target-box {
-        height: 35px; /* Adjust the height for phones */
-        width: 35px; /* Adjust the width for phones */
-        font-size: 15px; /* Adjust the font size for phones */
-        padding: 5px; /* Adjust padding for phones */
-        margin: 5px; /* Adjust margin for phones */
-    }
-}

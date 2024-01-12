@@ -35,8 +35,8 @@ body::before {
 
 .navbar {
     background-color: #1eb0bd;
-    height: 70px;
-    margin: 20px;
+    height: 50px;
+    margin: 15px;
     border-radius: 16px;
     padding: 0.5rem;
     box-shadow: 2px 2px 2px;
@@ -53,9 +53,9 @@ body::before {
     transition: 0.3s color;
       /* Add your styles for the navbar brand here */
       color: #fff; /* Change the color as needed */
-      font-size: 30px; /* Adjust the font size */
+      font-size: 20px; /* Adjust the font size */
       font-weight: bold; /* Make it bold */
-      font-family: 'Comic Sans MS',  /* Add a fun font */
+      font-family: 'Comic Sans MS', cursive; /* Add a fun font */
     
 }
  /* Add more styles for the logo as needed */
@@ -84,7 +84,7 @@ body::before {
     color: #fff;
     font-weight: 500;
     position: relative;
-    font-size: 20px;
+    font-size: small;
 }
 
 .nav-link:hover, .nav-link.active {
@@ -108,28 +108,28 @@ body::before {
    
 }
 
-.login-button {
-    background-color: #009970;
-    color: #fff;
-    font-size: 14px;
-    padding: 8px 20px;
-    border-radius: 50px;
-    text-decoration: none;
-    transition: 0.3s background-color;
-}
+
 
 .login-button:hover {
     background-color: #00b383;
 }
 .navbar {
     background-color: #1eb0bd;
-    height: 70px;
-    margin: 20px;
+    height: 50px;
+    margin: 15px;
     border-radius: 16px;
     padding: 0.5rem;
     box-shadow: 2px 2px 2px;
 }
-
+.login-button {
+    background-color: #5ebd1e;
+    color: #fff;
+    font-size: small;
+    padding: 5px ;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: 0.3s background-color;
+}
 .lesson-clicked {
     color: rgb(162, 13, 212); /* Change the color as per your preference */
     /* Add any additional styling here */
@@ -172,7 +172,7 @@ body::before {
     color: #fff;
     font-weight: 500;
     position: relative;
-    font-size: 20px;
+    font-size: small;
 }
 
 .nav-link:hover, .nav-link.active {

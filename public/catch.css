@@ -1,0 +1,362 @@
+body {
+    background: url(photos/pexels-artem-podrez-6941083.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+ 
+    justify-content: center;
+    align-items: center;
+    font-family: 'Comic Sans MS';
+    height: 100vh;
+    /* Ensure the body takes the full height of the viewport */
+}
+#container{
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+body::before {
+    background-color: rgba(0, 0, 0, 0.6);
+    content: "";
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+#game-container{
+  
+    display: flex;
+    justify-content:center;
+    align-items: center; 
+    flex-wrap: wrap;
+  
+  height: fit-content;
+
+  padding: 20px;
+  
+
+}
+
+
+/* Styling for each box */
+.box , .target-box{
+    height: 60px;
+    width: 60px;
+    border-radius: 5px 6px;
+    margin: 10px;
+    box-shadow: 2px 2px 2px 0px #000;
+    padding: 10px;
+    font-size: 30px;
+    flex-wrap: wrap;
+    position: relative;
+    transition: 1s;
+    cursor: pointer;
+    text-align: center;
+    color: #fff;
+}
+
+/* Different background colors for boxes */
+
+.leaderboard-container {
+    text-align: center;
+    margin: 20px;
+}
+
+/* Leaderboard table style */
+#leaderboard-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* Leaderboard table header style */
+#leaderboard-table th {
+    background-color: #f2f2f2;
+}
+
+/* Leaderboard table header cells */
+#leaderboard-table th {
+    padding: 12px 15px;
+    text-align: left;
+}
+
+/* Leaderboard table data cells */
+#leaderboard-table td {
+    padding: 8px 15px;
+}
+
+/* Alternating row background color for better readability */
+#leaderboard-table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Hover effect on rows */
+#leaderboard-table tbody tr:hover {
+    background-color: #ddd;
+}
+.welcome-screen {
+    background: rgba(14, 185, 48, 0.79);
+    width: 300px;
+    margin:  auto; /* Center horizontally */
+    padding: 20px;
+    text-align: center;
+    border-radius: 5px 6px;
+}
+
+.welcome-screen h2 {
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+.welcome-screen p {
+    font-size: 16px;
+}
+
+.welcome-screen input[type="text"] {
+    padding: 5px;
+    font-size: 16px;
+    width: 100%;
+    margin: 10px 0;
+}
+
+.welcome-screen button, #container button {
+    background-color: #07ae15;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+}
+
+/* Add this style to your CSS */
+
+/* Styling for the correct box */
+
+#container2{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    align-items: center;
+    margin: auto;
+    margin-top: 100px;
+    
+
+   
+}
+.hide-letter {
+    visibility: hidden;
+}
+body {
+    background: url(photos/pexels-artem-podrez-6941083.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Comic Sans MS';
+    height: 100vh;
+    /* Ensure the body takes the full height of the viewport */
+}
+
+body::before {
+    background-color: rgba(0, 0, 0, 0.6);
+    content: "";
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    max-width: 300px; /* Set a maximum width for the modal content */
+    text-align: center;
+}
+
+.close {
+    color: #555;
+    float: right;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#leaderboard-container {
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(122, 169, 156, 0.25);
+    padding: 20px;
+    width: 400px; /* Adjusted width for better responsiveness */
+   display: flex;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin-top: 50px;
+   color: black; /* Updated text color */
+}
+
+#leaderboard-table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+#leaderboard-table th, #leaderboard-table td {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    padding: 10px;
+ 
+}
+
+#leaderboard-table th {
+    background-color: #1eb0bd;
+    color: #000; /* Updated text color */
+}
+
+#leaderboard-table td {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+#leaderboard-table tbody tr:nth-child(even) td {
+    background-color: rgba(238, 238, 238, 0.9);
+}
+#container{
+    width: 400px;
+}
+.login-button {
+    background-color: #5ebd1e;
+    color: #fff;
+    font-size: small;
+    padding: 5px ;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: 0.3s background-color;
+}
+
+
+.navbar {
+    background-color: #1eb0bd;
+    height: 50px;
+    margin: 15px;
+    border-radius: 16px;
+    padding: 0.5rem;
+    box-shadow: 2px 2px 2px;
+}
+
+.lesson-clicked {
+    color: rgb(162, 13, 212); /* Change the color as per your preference */
+    /* Add any additional styling here */
+}
+
+.navbar-brand, .offcanvas-title {
+    font-weight: 500;
+    color: #d7fbf2;
+    transition: 0.3s color;
+      /* Add your styles for the navbar brand here */
+      color: #fff; /* Change the color as needed */
+      font-size: 20px; /* Adjust the font size */
+      font-weight: bold; /* Make it bold */
+      font-family: 'Comic Sans MS', cursive; /* Add a fun font */
+    
+}
+ /* Add more styles for the logo as needed */
+ .navbar-brand span {
+    display: inline-block;
+    transition: color 0.3s ease-in-out;
+}
+
+.navbar-brand:hover span {
+    color: #33ccff; /* Change the hover color */
+}
+
+
+
+.navbar-toggler {
+    border: none;
+    font-size: 1.25rem;
+}
+
+.navbar-toggler:focus, .btn-close:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+.nav-link {
+    color: #fff;
+    font-weight: 500;
+    position: relative;
+    font-size: small;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: #000;
+}
+.offcanvas-body, .offcanvas-header{
+    background-color: #1eb0bd;
+    
+}
+
+@media screen and (max-width: 768px) {
+    #container2{
+        width: 90%;
+    }
+    
+    #game-container{
+        width: 80%;
+    }
+    #leaderboard-container{
+        width: 80%;
+    }
+    #maincontainer{
+        flex-direction: column;
+    }
+    .box, .target-box {
+        height: 70px; /* Adjust the height for tablets */
+        width: 70px; /* Adjust the width for tablets */
+        font-size: 40px; /* Adjust the font size for tablets */
+        
+    }
+    #container2{
+        font-size:20px;
+        flex-direction: column;
+        margin-top: 100px;
+       
+    }
+   
+}
+
+/* Media query for phones */
+@media screen and (max-width: 480px) {
+    .box, .target-box {
+        height: 35px; /* Adjust the height for phones */
+        width: 35px; /* Adjust the width for phones */
+        font-size: 15px; /* Adjust the font size for phones */
+        padding: 5px; /* Adjust padding for phones */
+        margin: 5px; /* Adjust margin for phones */
+    }
+
+}

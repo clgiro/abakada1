@@ -85,8 +85,8 @@ table {
 
 .navbar {
     background-color: #1eb0bd;
-    height: 70px;
-    margin: 20px;
+    height: 50px;
+    margin: 15px;
     border-radius: 16px;
     padding: 0.5rem;
     box-shadow: 2px 2px 2px;
@@ -105,7 +105,7 @@ table {
       color: #fff; /* Change the color as needed */
       font-size: 20px; /* Adjust the font size */
       font-weight: bold; /* Make it bold */
-      font-family: 'Comic Sans MS', cursive; /* Add a fun font */
+      font-family: 'Comic Sans MS',cursive ; /* Add a fun font */
     
 }
  /* Add more styles for the logo as needed */
@@ -152,11 +152,11 @@ table {
 
 
 .login-button {
-    background-color: #009970;
+    background-color: #5ebd1e;
     color: #fff;
-    font-size: 14px;
-    padding: 8px 20px;
-    border-radius: 50px;
+    font-size: small;
+    padding: 5px ;
+    border-radius: 10px;
     text-decoration: none;
     transition: 0.3s background-color;
 }
@@ -166,8 +166,8 @@ table {
 }
 .navbar {
     background-color: #1eb0bd;
-    height: 70px;
-    margin: 20px;
+    height: 50px;
+    margin: 15px;
     border-radius: 16px;
     padding: 0.5rem;
     box-shadow: 2px 2px 2px;
@@ -178,18 +178,6 @@ table {
     /* Add any additional styling here */
 }
 
-.navbar-brand, .offcanvas-title {
-    font-weight: 500;
-    color: #d7fbf2;
-    transition: 0.3s color;
-      /* Add your styles for the navbar brand here */
-      color: #fff; /* Change the color as needed */
-      font-size: 30px; /* Adjust the font size */
-      font-weight: bold; /* Make it bold */
-      font-family: 'Comic Sans MS', ; /* Add a fun font */
-    
-}
- /* Add more styles for the logo as needed */
  .navbar-brand span {
     display: inline-block;
     transition: color 0.3s ease-in-out;
